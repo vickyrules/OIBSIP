@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(getApplicationContext() , AboutActivity.class);
                 startActivity(intent);
+                return  true;
 
             case R.id.Version:
                 Toast.makeText(this, "Version 1.0.0", Toast.LENGTH_SHORT).show(); return true;
