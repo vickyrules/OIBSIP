@@ -30,7 +30,7 @@
 
             <LinearLayout
                 style="@style/linearLayoutInnerStyle"
-                android:background="@drawable/clcikeffect"
+                android:background="@drawable/clickeffect"
                 >
 
                 <com.google.android.material.imageview.ShapeableImageView
@@ -47,12 +47,12 @@
 
             <LinearLayout
                 style="@style/linearLayoutInnerStyle"
-                android:background="@drawable/clcikeffect">
+                android:background="@drawable/clickeffect">
 
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/areaIcon"
                     style="@style/iconstyle"
-                    android:background="@drawable/clcikeffect"
+                    android:background="@drawable/clickeffect"
                     android:src="@drawable/ic_area_floor_size" />
 
                 <TextView
@@ -63,12 +63,12 @@
 
             <LinearLayout
                 style="@style/linearLayoutInnerStyle"
-                android:background="@drawable/clcikeffect">
+                android:background="@drawable/clickeffect">
 
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/volumeIcon"
                     style="@style/iconstyle"
-                    android:background="@drawable/clcikeffect"
+                    android:background="@drawable/clickeffect"
                     android:src="@drawable/ic_cube" />
 
                 <TextView
@@ -91,11 +91,11 @@
 
             <LinearLayout
                 style="@style/linearLayoutInnerStyle"
-                android:background="@drawable/clcikeffect">
+                android:background="@drawable/clickeffect">
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/speedIcon"
                     style="@style/iconstyle"
-                    android:background="@drawable/clcikeffect"
+                    android:background="@drawable/clickeffect"
                     android:src="@drawable/ic_speedometer" />
 
                 <TextView
@@ -105,11 +105,11 @@
 
             <LinearLayout
                 style="@style/linearLayoutInnerStyle"
-                android:background="@drawable/clcikeffect">
+                android:background="@drawable/clickeffect">
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/weightIcon"
                     style="@style/iconstyle"
-                    android:background="@drawable/clcikeffect"
+                    android:background="@drawable/clickeffect"
                     android:src="@drawable/ic_weight" />
 
                 <TextView
@@ -119,11 +119,11 @@
 
             <LinearLayout
                 style="@style/linearLayoutInnerStyle"
-                android:background="@drawable/clcikeffect">
+                android:background="@drawable/clickeffect">
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/temperatureIcon"
                     style="@style/iconstyle"
-                    android:background="@drawable/clcikeffect"
+                    android:background="@drawable/clickeffect"
                     android:src="@drawable/ic_temperature" />
 
                 <TextView
@@ -148,11 +148,11 @@
 
             <LinearLayout
                 style="@style/linearLayoutInnerStyle"
-                android:background="@drawable/clcikeffect">
+                android:background="@drawable/clickeffect">
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/powerIcon"
                     style="@style/iconstyle"
-                    android:background="@drawable/clcikeffect"
+                    android:background="@drawable/clickeffect"
                     android:src="@drawable/ic_power" />
 
                 <TextView
@@ -163,12 +163,12 @@
 
             <LinearLayout
                 style="@style/linearLayoutInnerStyle"
-                android:background="@drawable/clcikeffect">
+                android:background="@drawable/clickeffect">
 
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/pressureIcon"
                     style="@style/iconstyle"
-                    android:background="@drawable/clcikeffect"
+                    android:background="@drawable/clickeffect"
                     android:src="@drawable/ic_pressure_check" />
 
                 <TextView

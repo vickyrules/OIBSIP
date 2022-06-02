@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/vicky/AndroidStudioProjects/OIBSIP/OIBSIP/UnitConverter/app/src/main/res/drawable/clickeffect.xml" value="0.2315" />
+        <entry key="..\:/Users/vicky/AndroidStudioProjects/OIBSIP/OIBSIP/UnitConverter/app/src/main/res/drawable/clickeffectborder.xml" value="0.2315" />
+        <entry key="..\:/Users/vicky/AndroidStudioProjects/OIBSIP/OIBSIP/UnitConverter/app/src/main/res/drawable/ic_launcher.xml" value="0.185" />
+        <entry key="..\:/Users/vicky/AndroidStudioProjects/OIBSIP/OIBSIP/UnitConverter/app/src/main/res/layout/activity_about.xml" value="0.152" />
+        <entry key="..\:/Users/vicky/AndroidStudioProjects/OIBSIP/OIBSIP/UnitConverter/app/src/main/res/menu/settings.xml" value="0.14493373236425822" />
         <entry key="..\:/Users/vicky/AndroidStudioProjects/UnitConverter/app/src/main/res/drawable/clcikeffect.xml" value="0.1265" />
         <entry key="..\:/Users/vicky/AndroidStudioProjects/UnitConverter/app/src/main/res/drawable/ic_area_floor_size.xml" value="0.111" />
         <entry key="..\:/Users/vicky/AndroidStudioProjects/UnitConverter/app/src/main/res/drawable/ic_cube.xml" value="0.111" />

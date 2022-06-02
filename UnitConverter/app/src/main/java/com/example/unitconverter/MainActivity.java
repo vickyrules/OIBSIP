@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
@@ -30,9 +31,12 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.About:
-                Toast.makeText(this,    "AboutUS", Toast.LENGTH_SHORT).show();return true;
+
+                Intent intent = new Intent(getApplicationContext() , AboutActivity.class);
+                startActivity(intent);
+
             case R.id.Version:
-                Toast.makeText(this, "Version 1.0.1", Toast.LENGTH_SHORT).show(); return true;
+                Toast.makeText(this, "Version 1.0.0", Toast.LENGTH_SHORT).show(); return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
