@@ -23,7 +23,8 @@ public class AboutActivity extends AppCompatActivity {
 
         getSupportActionBar().setTitle("About");
         //getSupportActionBar().setSubtitle("us");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
 
         TextView email = findViewById(R.id.about_dev_info_emial);

@@ -29,12 +29,13 @@
           >
 
             <LinearLayout
+                android:id="@+id/lengthIcon"
                 style="@style/linearLayoutInnerStyle"
                 android:background="@drawable/clickeffect"
                 >
 
                 <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/lengthIcon"
+
                     style="@style/iconstyle"
                     android:src="@drawable/length" />
 
@@ -47,10 +48,11 @@
 
             <LinearLayout
                 style="@style/linearLayoutInnerStyle"
+                android:id="@+id/areaIcon"
                 android:background="@drawable/clickeffect">
 
                 <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/areaIcon"
+
                     style="@style/iconstyle"
                     android:background="@drawable/clickeffect"
                     android:src="@drawable/ic_area_floor_size" />
@@ -63,10 +65,11 @@
 
             <LinearLayout
                 style="@style/linearLayoutInnerStyle"
+                android:id="@+id/volumeIcon"
                 android:background="@drawable/clickeffect">
 
                 <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/volumeIcon"
+
                     style="@style/iconstyle"
                     android:background="@drawable/clickeffect"
                     android:src="@drawable/ic_cube" />
@@ -91,9 +94,10 @@
 
             <LinearLayout
                 style="@style/linearLayoutInnerStyle"
+                android:id="@+id/speedIcon"
                 android:background="@drawable/clickeffect">
                 <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/speedIcon"
+
                     style="@style/iconstyle"
                     android:background="@drawable/clickeffect"
                     android:src="@drawable/ic_speedometer" />
@@ -105,9 +109,10 @@
 
             <LinearLayout
                 style="@style/linearLayoutInnerStyle"
+                android:id="@+id/weightIcon"
                 android:background="@drawable/clickeffect">
                 <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/weightIcon"
+
                     style="@style/iconstyle"
                     android:background="@drawable/clickeffect"
                     android:src="@drawable/ic_weight" />
@@ -119,9 +124,9 @@
 
             <LinearLayout
                 style="@style/linearLayoutInnerStyle"
+                android:id="@+id/temperatureIcon"
                 android:background="@drawable/clickeffect">
                 <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/temperatureIcon"
                     style="@style/iconstyle"
                     android:background="@drawable/clickeffect"
                     android:src="@drawable/ic_temperature" />
@@ -148,9 +153,10 @@
 
             <LinearLayout
                 style="@style/linearLayoutInnerStyle"
+                android:id="@+id/powerIcon"
                 android:background="@drawable/clickeffect">
                 <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/powerIcon"
+
                     style="@style/iconstyle"
                     android:background="@drawable/clickeffect"
                     android:src="@drawable/ic_power" />
@@ -163,10 +169,11 @@
 
             <LinearLayout
                 style="@style/linearLayoutInnerStyle"
+                android:id="@+id/pressureIcon"
                 android:background="@drawable/clickeffect">
 
                 <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/pressureIcon"
+
                     style="@style/iconstyle"
                     android:background="@drawable/clickeffect"
                     android:src="@drawable/ic_pressure_check" />
