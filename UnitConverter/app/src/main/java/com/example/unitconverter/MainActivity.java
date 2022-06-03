@@ -107,6 +107,20 @@ public class MainActivity extends AppCompatActivity {
         weight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                unitsListMetric.clear();
+                unitsListImperial.clear();
+
+                unitsListMetric.add("Kilogram (kg) ");
+                unitsListMetric.add("Gram (g) ");
+                unitsListMetric.add("Milligram (mg) ");
+                unitsListMetric.add("Ton (t) ");
+
+                unitsListImperial.add("Pound (lb) ");
+                unitsListImperial.add("Ounce (oz) ");
+                unitsListImperial.add("Grain (gr) ");
+
+
                 startConversion("Weight conversion");
             }
         });
