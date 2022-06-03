@@ -185,7 +185,13 @@ public class MainActivity extends AppCompatActivity {
                 unitsListMetric.clear();
                 unitsListImperial.clear();
 
-                unitsListMetric.add(" () ");
+                unitsListMetric.add("Standard Atmosphere (atm) ");
+                unitsListMetric.add("Hectopascal (hPa) ");
+                unitsListMetric.add("Megapascal (MPa) ");
+                unitsListMetric.add("Pounds/square foot (psf) ");
+                unitsListMetric.add("Pounds/square inch (psi) ");
+                unitsListMetric.add("Millimeter of mercury (mmHg) ");
+                unitsListMetric.add("Imch of mercury (inHg) ");
 
                 startConversion("Pressure conversion");
             }
