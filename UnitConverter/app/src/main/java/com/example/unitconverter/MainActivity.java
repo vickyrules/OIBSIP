@@ -83,6 +83,22 @@ public class MainActivity extends AppCompatActivity {
         volume.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                unitsListMetric.clear();
+                unitsListImperial.clear();
+
+                unitsListMetric.add("Liter (l) ");
+                unitsListMetric.add("milli_liter (ml) ");
+                unitsListMetric.add("Cubic meter (m\u00b3) ");
+                unitsListMetric.add("Cubic centimeter (cm\u00b3) ");
+                unitsListMetric.add("Cubic millimeter (mm\u00b3) ");
+
+                unitsListImperial.add("Cubic inch (in\u00b3) ");
+                unitsListImperial.add("Cubic Yard (yd\u00b3) ");
+                unitsListImperial.add("Cubic foot (ft\u00b3) ");
+                unitsListImperial.add("UK gallon (UK gal) ");
+                unitsListImperial.add("US gallon (US gal) ");
+
+
                 startConversion("Volume conversion");
             }
         });
