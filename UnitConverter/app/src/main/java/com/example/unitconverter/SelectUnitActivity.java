@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public class SelectUnitActivity extends AppCompatActivity {
     RadioGroup radioGroupMetric;
     RadioGroup radioGroupImperial;
-    TextView imperialTxt ;
+    TextView imperialTxt ,metricTxt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +36,13 @@ public class SelectUnitActivity extends AppCompatActivity {
         radioGroupMetric = (RadioGroup) findViewById(R.id.radioGpMatric);
         radioGroupImperial = (RadioGroup) findViewById(R.id.radioGpImperial);
         imperialTxt = (TextView) findViewById(R.id.imperialTxt);
+        metricTxt = (TextView) findViewById(R.id.metricTxt);
 
         ArrayList<String> metricUnitList = new ArrayList<String>();
         ArrayList<String> imperailUnitList = new ArrayList<String>();
         if(imperailUnitList.size() == 0){
             imperialTxt.setVisibility(View.GONE);
+            metricTxt.setVisibility(View.GONE);
 
         }
         metricUnitList = (ArrayList<String>) getIntent().getSerializableExtra("metricUnits");

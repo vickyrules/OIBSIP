@@ -146,6 +146,15 @@ public class MainActivity extends AppCompatActivity {
         temp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                unitsListMetric.clear();
+                unitsListImperial.clear();
+
+                unitsListMetric.add("Degree Celsius (°C) ");
+                unitsListMetric.add("Degree Fahrenheit (°F) ");
+                unitsListMetric.add("Degree Reaumur(°Re) ");
+                unitsListMetric.add("Kelvin (K) ");
+
+
                 startConversion("Temperature conversion");
             }
         });
@@ -154,6 +163,9 @@ public class MainActivity extends AppCompatActivity {
         power.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
+
                 startConversion("Power conversion");
             }
         });
