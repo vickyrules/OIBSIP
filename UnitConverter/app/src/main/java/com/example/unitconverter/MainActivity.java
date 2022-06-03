@@ -13,15 +13,19 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     LinearLayout length,area,weight,volume,speed,power,pressure,temp;
+    ArrayList <String> unitsListMetric;
+    ArrayList <String> unitsListImperial;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
 
         length = (LinearLayout) findViewById(R.id.lengthIcon);
         area = (LinearLayout) findViewById(R.id.areaIcon);
@@ -32,9 +36,24 @@ public class MainActivity extends AppCompatActivity {
         temp = (LinearLayout) findViewById(R.id.temperatureIcon);
         weight = (LinearLayout) findViewById(R.id.weightIcon);
 
+        unitsListMetric = new ArrayList<String>();
+        unitsListImperial = new ArrayList<String>();
+
         length.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                unitsListMetric.clear();
+                unitsListImperial.clear();
+
+                unitsListMetric.add("Kilometer (km) ");
+                unitsListMetric.add("Meter (m) ");
+                unitsListMetric.add("Centimeter (cm) ");
+                unitsListMetric.add("Millimeter (mm) ");
+
+                unitsListImperial.add("Inch (in) ");
+                unitsListImperial.add("Mile (mi) ");
+                unitsListImperial.add("Foot (ft) ");
+                unitsListImperial.add("Yard (yd) ");
                 startConversion("Length conversion");
             }
         });
@@ -123,8 +142,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void  startConversion(String title){
-        Intent intent = new Intent(getApplicationContext(),converterActivity.class);
+        Intent intent = new Intent(getApplicationContext(),SelectUnitActivity.class);
         intent.putExtra("title",title);
+        intent.putExtra("metricUnits",unitsListMetric);
+        intent.putExtra("imperialUnits",unitsListImperial);
         startActivity(intent);
 
     }
