@@ -62,6 +62,19 @@ public class MainActivity extends AppCompatActivity {
         area.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                unitsListMetric.clear();
+                unitsListImperial.clear();
+
+                unitsListMetric.add("Square kilometer (Km\u00b2) ");
+                unitsListMetric.add("Square meter (m\u00b2) ");
+                unitsListMetric.add("Square centimeter (cm\u00b2) ");
+                unitsListMetric.add("Square millimeter (mm\u00b2) ");
+
+                unitsListImperial.add("Square inch (in\u00b2) ");
+                unitsListImperial.add("Square mile (mi\u00b2) ");
+                unitsListImperial.add("Square foot (ft\u00b2) ");
+                unitsListImperial.add("Square Yard (yd\u00b2) ");
                 startConversion("Area conversion");
             }
         });

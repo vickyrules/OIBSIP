@@ -30,34 +30,38 @@ public class SelectUnitActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        radioGroupMetric  = (RadioGroup) findViewById(R.id.radioGpMatric);
-        radioGroupImperial  = (RadioGroup) findViewById(R.id.radioGpImperial);
+        radioGroupMetric = (RadioGroup) findViewById(R.id.radioGpMatric);
+        radioGroupImperial = (RadioGroup) findViewById(R.id.radioGpImperial);
 
-        ArrayList <String> metricUnitList = new ArrayList<String>();
-        ArrayList <String> imperailUnitList = new ArrayList<String>();
+        ArrayList<String> metricUnitList = new ArrayList<String>();
+        ArrayList<String> imperailUnitList = new ArrayList<String>();
         metricUnitList = (ArrayList<String>) getIntent().getSerializableExtra("metricUnits");
         imperailUnitList = (ArrayList<String>) getIntent().getSerializableExtra("imperialUnits");
 
-        for(String unit : metricUnitList ) {
+        for (String unit : metricUnitList) {
 
             RadioButton radioButton = new RadioButton(this.radioGroupImperial.getContext());
             radioButton.setText(unit);
             radioButton.setTextColor(this.getResources().getColor(R.color.white));
             radioButton.setTextDirection(2);
-            radioButton.setTextSize(15);
+            radioButton.setTextSize(16);
+            radioButton.setPadding(0, 10, 0, 10);
             RadioGroup.LayoutParams childParam1 = new RadioGroup.LayoutParams(RadioGroup.LayoutParams.MATCH_PARENT, RadioGroup.LayoutParams.WRAP_CONTENT);
+            childParam1.setMargins(0, 20, 0, 20);
             radioGroupMetric.addView(radioButton, childParam1);
         }
 
 
-        for(String unit : imperailUnitList ) {
+        for (String unit : imperailUnitList) {
 
             RadioButton radioButton = new RadioButton(this.radioGroupImperial.getContext());
             radioButton.setText(unit);
             radioButton.setTextColor(this.getResources().getColor(R.color.white));
             radioButton.setTextDirection(2);
-            radioButton.setTextSize(15);
+            radioButton.setTextSize(16);
+            radioButton.setPadding(0, 10, 0, 10);
             RadioGroup.LayoutParams childParam1 = new RadioGroup.LayoutParams(RadioGroup.LayoutParams.MATCH_PARENT, RadioGroup.LayoutParams.WRAP_CONTENT);
+            childParam1.setMargins(0, 20, 0, 20);
             radioGroupImperial.addView(radioButton, childParam1);
         }
 
@@ -66,7 +70,7 @@ public class SelectUnitActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-        if (item.getItemId() == android.R.id.home){
+        if (item.getItemId() == android.R.id.home) {
             finish();
         }
         return super.onOptionsItemSelected(item);
