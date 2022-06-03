@@ -129,6 +129,15 @@ public class MainActivity extends AppCompatActivity {
         speed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                unitsListMetric.clear();
+                unitsListImperial.clear();
+
+                unitsListMetric.add("Kilometer/second (km/s) ");
+                unitsListMetric.add("Meter/second (m/s) ");
+                unitsListMetric.add("Kilometer/hour (km/h) ");
+                unitsListMetric.add("Speed of light (c) ");
+                unitsListMetric.add("Mile/hour (mph) ");
+
                 startConversion("Speed conversion");
             }
         });

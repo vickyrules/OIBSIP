@@ -9,15 +9,18 @@ import android.content.res.ColorStateList;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
 public class SelectUnitActivity extends AppCompatActivity {
     RadioGroup radioGroupMetric;
     RadioGroup radioGroupImperial;
+    TextView imperialTxt ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +35,14 @@ public class SelectUnitActivity extends AppCompatActivity {
 
         radioGroupMetric = (RadioGroup) findViewById(R.id.radioGpMatric);
         radioGroupImperial = (RadioGroup) findViewById(R.id.radioGpImperial);
+        imperialTxt = (TextView) findViewById(R.id.imperialTxt);
 
         ArrayList<String> metricUnitList = new ArrayList<String>();
         ArrayList<String> imperailUnitList = new ArrayList<String>();
+        if(imperailUnitList.size() == 0){
+            imperialTxt.setVisibility(View.GONE);
+
+        }
         metricUnitList = (ArrayList<String>) getIntent().getSerializableExtra("metricUnits");
         imperailUnitList = (ArrayList<String>) getIntent().getSerializableExtra("imperialUnits");
 
