@@ -163,7 +163,15 @@ public class MainActivity extends AppCompatActivity {
         power.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                unitsListMetric.clear();
+                unitsListImperial.clear();
 
+                unitsListMetric.add("Kilowatt (kW) ");
+                unitsListMetric.add("Watt (W) ");
+                unitsListMetric.add("Joule/second(J/s) ");
+                unitsListMetric.add("Horsepower (hp) ");
+                unitsListMetric.add("Kilocalorie/second (kcal/s) ");
+                unitsListMetric.add("Newton-meter/second (N-m/s) ");
 
 
                 startConversion("Power conversion");
@@ -174,6 +182,11 @@ public class MainActivity extends AppCompatActivity {
         pressure.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                unitsListMetric.clear();
+                unitsListImperial.clear();
+
+                unitsListMetric.add(" () ");
+
                 startConversion("Pressure conversion");
             }
         });
