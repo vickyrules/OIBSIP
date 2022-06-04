@@ -2,10 +2,15 @@ package com.example.unitconverter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
 
 public class converterActivity extends AppCompatActivity {
+
+    LinearLayout upperLayout,bottomLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +23,33 @@ public class converterActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
+        upperLayout = (LinearLayout) findViewById(R.id.layoutTextUpper);
+        bottomLayout = (LinearLayout) findViewById(R.id.layoutTextLower);
 
+        upperLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startUnitSelect();
+            }
+        });
+
+        bottomLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startUnitSelect();
+            }
+        });
+
+
+
+
+    }
+
+    private void startUnitSelect() {
+        Intent intentUnitSelect = new Intent(getApplicationContext(),SelectUnitActivity.class);;
+        intentUnitSelect.putExtra("metricUnits",getIntent().getSerializableExtra("metricUnits"));
+        intentUnitSelect.putExtra("imperialUnits",getIntent().getSerializableExtra("imperialUnits"));
+        startActivity(intentUnitSelect);
     }
 
 

@@ -225,10 +225,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void  startConversion(String title){
-        Intent intent = new Intent(getApplicationContext(),SelectUnitActivity.class);
+
+        Intent intent = new Intent(getApplicationContext(),converterActivity.class);
         intent.putExtra("title",title);
         intent.putExtra("metricUnits",unitsListMetric);
         intent.putExtra("imperialUnits",unitsListImperial);
+
         startActivity(intent);
 
     }

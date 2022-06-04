@@ -8,8 +8,7 @@
         <item name="android:padding">15dp</item>
         <item name="elevation">44dp</item>
         <item name="android:gravity">center</item>
-        <item name="android:layout_gravity">center</item>
-        <item name="shapeAppearance">@style/Circular</item>
+        <item name="android:layout_gravity">center</item>>
 
     </style>
 
