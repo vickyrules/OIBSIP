@@ -21,6 +21,7 @@ public class SelectUnitActivity extends AppCompatActivity {
     RadioGroup radioGroupMetric;
     RadioGroup radioGroupImperial;
     TextView imperialTxt ,metricTxt;
+    View endline;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,16 +38,21 @@ public class SelectUnitActivity extends AppCompatActivity {
         radioGroupImperial = (RadioGroup) findViewById(R.id.radioGpImperial);
         imperialTxt = (TextView) findViewById(R.id.imperialTxt);
         metricTxt = (TextView) findViewById(R.id.metricTxt);
+        endline = (View) findViewById(R.id.endViewLine);
 
         ArrayList<String> metricUnitList = new ArrayList<String>();
         ArrayList<String> imperailUnitList = new ArrayList<String>();
+
+        metricUnitList = (ArrayList<String>) getIntent().getSerializableExtra("metricUnits");
+        imperailUnitList = (ArrayList<String>) getIntent().getSerializableExtra("imperialUnits");
+
         if(imperailUnitList.size() == 0){
             imperialTxt.setVisibility(View.GONE);
             metricTxt.setVisibility(View.GONE);
+            endline.setVisibility(View.GONE);
+
 
         }
-        metricUnitList = (ArrayList<String>) getIntent().getSerializableExtra("metricUnits");
-        imperailUnitList = (ArrayList<String>) getIntent().getSerializableExtra("imperialUnits");
 
         for (String unit : metricUnitList) {
 
