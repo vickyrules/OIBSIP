@@ -151,7 +151,7 @@ public class converterActivity extends AppCompatActivity {
 
 
 
-//
+//setting unit on textview
 
         upperLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -170,10 +170,8 @@ public class converterActivity extends AppCompatActivity {
             }
         });
 
-
-
-
     }
+
 
     private void startUnitSelect() {
         Intent intentUnitSelect = new Intent(this,SelectUnitActivity.class);;
@@ -182,7 +180,7 @@ public class converterActivity extends AppCompatActivity {
         startActivityForResult(intentUnitSelect,REQUEST_CODE);
     }
 
-
+    //
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // handle arrow click here
@@ -192,6 +190,7 @@ public class converterActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    // getting response back
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -213,4 +212,6 @@ public class converterActivity extends AppCompatActivity {
         }
 
     }
+
+
 }
