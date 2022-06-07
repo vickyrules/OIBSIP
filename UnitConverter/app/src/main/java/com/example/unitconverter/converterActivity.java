@@ -2,6 +2,7 @@ package com.example.unitconverter;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.text.TextUtilsCompat;
 
 import android.content.Intent;
 import android.os.Build;
@@ -18,6 +19,8 @@ import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.internal.TextWatcherAdapter;
 
 public class converterActivity extends AppCompatActivity {
 
@@ -55,6 +58,7 @@ public class converterActivity extends AppCompatActivity {
         resultTextUpper.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
+
                 resultTextUpper.setTextColor(getResources().getColor(R.color.teal_200));
                 resultTextLower.setTextColor(getResources().getColor(R.color.white));
                 return false;
@@ -70,6 +74,78 @@ public class converterActivity extends AppCompatActivity {
                return false;
            }
        });
+
+
+
+        resultTextUpper.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                resultTextLower.setText(charSequence);
+                if(i>7 && i<=11){
+                    resultTextUpper.setTextSize(25);
+                }
+
+                else if (i>11 && i<=14){
+                    resultTextUpper.setTextSize(22);
+                    if(i==14){
+                    Toast.makeText(getApplicationContext(), "Maximum digits (15) reached", Toast.LENGTH_SHORT).show();}
+                }
+                else if (i<=7){
+                    resultTextUpper.setTextSize(32);
+                }
+
+                else{
+                    resultTextUpper.setTextSize(15);
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+
+        resultTextLower.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                //resultTextLower.setText(charSequence);
+                if(i>7 && i<=11){
+                    resultTextLower.setTextSize(25);
+                }
+
+                else if (i>11 && i<=14){
+                    resultTextLower.setTextSize(22);
+                    if(i==14){
+                    Toast.makeText(getApplicationContext(), "Maximum digits (15) reached", Toast.LENGTH_SHORT).show();}
+                }
+                else if (i<=7){
+                    resultTextLower.setTextSize(32);
+                }
+
+                else{
+                    resultTextLower.setTextSize(15);
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
 
 
 
