@@ -54,6 +54,7 @@ public class converterActivity extends AppCompatActivity {
         resultTextUpper = (EditText) findViewById(R.id.resultTextUpper);
         resultTextLower = (EditText) findViewById(R.id.resultTextLower);
 
+        //change color on touch
 
         resultTextUpper.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -76,6 +77,7 @@ public class converterActivity extends AppCompatActivity {
        });
 
 
+       // auto sizing text according to the length
 
         resultTextUpper.addTextChangedListener(new TextWatcher() {
             @Override
@@ -148,6 +150,8 @@ public class converterActivity extends AppCompatActivity {
 
 
 
+
+//
 
         upperLayout.setOnClickListener(new View.OnClickListener() {
             @Override
