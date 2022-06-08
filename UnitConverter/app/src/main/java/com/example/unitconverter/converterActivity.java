@@ -140,7 +140,7 @@ public class converterActivity extends AppCompatActivity {
                 if (title.equals("Length conversion")) {
 
                     try {
-
+                        //Kilometer
                         if (unitIdxUpper == 0 && unitIdxLower == 0) {
                             result = LengthMethods.kilometer_to_Kilometer(Double.parseDouble(charSequence.toString()));
 
@@ -161,6 +161,28 @@ public class converterActivity extends AppCompatActivity {
 
                         }
 
+                        if (unitIdxUpper == 0 && unitIdxLower == 4) {
+                            result = LengthMethods.kilometer_to_Inch(Double.parseDouble(charSequence.toString()));
+
+                        }
+
+                        if (unitIdxUpper == 0 && unitIdxLower == 5) {
+                            result = LengthMethods.kilometer_to_Mile(Double.parseDouble(charSequence.toString()));
+
+                        }
+
+                        if (unitIdxUpper == 0 && unitIdxLower == 6) {
+                            result = LengthMethods.kilometer_to_Foot(Double.parseDouble(charSequence.toString()));
+
+                        }
+
+
+                        if (unitIdxUpper == 0 && unitIdxLower == 7) {
+                            result = LengthMethods.kilometer_to_Yard(Double.parseDouble(charSequence.toString()));
+
+                        }
+
+                        //meter
                         if (unitIdxUpper == 1 && unitIdxLower == 1) {
                             result = LengthMethods.meter_to_Meter(Double.parseDouble(charSequence.toString()));
 
@@ -176,7 +198,34 @@ public class converterActivity extends AppCompatActivity {
 
                         if (unitIdxUpper == 1 && unitIdxLower == 3) {
                             result = LengthMethods.meter_to_Centimeter(Double.parseDouble(charSequence.toString()));
+                        }
 
+                        //centimeter
+                        if (unitIdxUpper == 2 && unitIdxLower == 2) {
+                            result = LengthMethods.centimeter_to_Centimeter(Double.parseDouble(charSequence.toString()));
+                        }
+                        if (unitIdxUpper == 2 && unitIdxLower == 0) {
+                            result = LengthMethods.centimeter_to_Kilometer(Double.parseDouble(charSequence.toString()));
+                        }
+                        if (unitIdxUpper == 2 && unitIdxLower == 1) {
+                            result = LengthMethods.centimeter_to_Meter(Double.parseDouble(charSequence.toString()));
+                        }
+                        if (unitIdxUpper == 2 && unitIdxLower == 3) {
+                            result = LengthMethods.centimeter_to_Millimeter(Double.parseDouble(charSequence.toString()));
+                        }
+
+                    //millimeter
+                        if (unitIdxUpper == 3 && unitIdxLower == 3) {
+                            result = LengthMethods.millimeter_to_Millimeter(Double.parseDouble(charSequence.toString()));
+                        }
+                        if (unitIdxUpper == 3 && unitIdxLower == 0) {
+                            result = LengthMethods.millimeter_to_Kilometer(Double.parseDouble(charSequence.toString()));
+                        }
+                        if (unitIdxUpper == 3 && unitIdxLower == 1) {
+                            result = LengthMethods.millimeter_to_Meter(Double.parseDouble(charSequence.toString()));
+                        }
+                        if (unitIdxUpper == 3 && unitIdxLower == 2) {
+                            result = LengthMethods.millimeter_to_Centimeter(Double.parseDouble(charSequence.toString()));
                         }
 
 
@@ -185,14 +234,18 @@ public class converterActivity extends AppCompatActivity {
 
 
 
-                        Toast.makeText(converterActivity.this, unitIdxUpper + "" + unitIdxLower, Toast.LENGTH_SHORT).show();
-                        resultTextLower.setText(result + "");
+
+
+
                     } catch (Exception e) {
                         Toast.makeText(converterActivity.this, e + "", Toast.LENGTH_SHORT).show();
                         resultTextLower.setText("0");
                     }
 
                 }
+
+                Toast.makeText(converterActivity.this, unitIdxUpper + "" + unitIdxLower, Toast.LENGTH_SHORT).show();
+                resultTextLower.setText(result + "");
 
             }
 
