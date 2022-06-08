@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -38,7 +39,7 @@ public class SelectUnitActivity extends AppCompatActivity {
         setContentView(R.layout.activity_select_unit);
         getSupportActionBar().setTitle("Select Unit");
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         radioGroupMetric = (RadioGroup) findViewById(R.id.radioGpMatric);
@@ -109,7 +110,7 @@ public class SelectUnitActivity extends AppCompatActivity {
                         setResult(Activity.RESULT_OK, intent);
                         finish();
                     }
-                }, 1000);
+                }, 300);
             }
         });
 
@@ -131,15 +132,19 @@ public class SelectUnitActivity extends AppCompatActivity {
                         setResult(Activity.RESULT_OK, intent);
                         finish();
                     }
-                }, 1000);
+                }, 300);
             }
-
 
         });
 
 
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "Press on back arrow", Toast.LENGTH_SHORT).show();
     }
 
     @Override

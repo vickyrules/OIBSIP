@@ -29,16 +29,17 @@ public class converterActivity extends AppCompatActivity {
     LinearLayout upperLayout, bottomLayout;
     TextView unitTextUpper;
     TextView unitTextLower;
-    EditText resultTextUpper, resultTextLower;
+    EditText resultTextUpper;
+    TextView resultTextLower;
     String unitText;
     int unitId;
-    int unitIdxUpper = 0 , unitIdxLower = 0;
+    int unitIdxUpper = 0, unitIdxLower = 0;
     int textViewSelected = -1;
     float textSize;
 
     String title;
-    ArrayList<String> metricUnitList ;
-    ArrayList<String> imperialUnitList ;
+    ArrayList<String> metricUnitList;
+    ArrayList<String> imperialUnitList;
 
     private static final int REQUEST_CODE = 101;
 
@@ -69,391 +70,86 @@ public class converterActivity extends AppCompatActivity {
         unitTextUpper = (TextView) findViewById(R.id.unitTextViewUpper);
         unitTextLower = (TextView) findViewById(R.id.unitTextViewLower);
         resultTextUpper = (EditText) findViewById(R.id.resultTextUpper);
-        resultTextLower = (EditText) findViewById(R.id.resultTextLower);
+        resultTextLower = (TextView) findViewById(R.id.resultTextLower);
 
 
         //
-        if(imperialUnitList.size() > 0){
+        if (imperialUnitList.size() > 0) {
             unitIdxLower = metricUnitList.size();
-        unitTextUpper.setText(metricUnitList.get(unitIdxUpper));
-        unitTextLower.setText(imperialUnitList.get(0));}
-
-        else{
+            unitTextUpper.setText(metricUnitList.get(unitIdxUpper));
+            unitTextLower.setText(imperialUnitList.get(0));
+        } else {
             unitIdxLower = 1;
             unitTextUpper.setText(metricUnitList.get(unitIdxUpper));
-            unitTextLower.setText(metricUnitList.get(unitIdxLower));}
-
-
+            unitTextLower.setText(metricUnitList.get(unitIdxLower));
+        }
 
 
         //change color on touch
 
 
-        resultTextUpper.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
+        try {
+            resultTextUpper.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                @Override
+                public void onFocusChange(View view, boolean b) {
+                    resultTextUpper.setTextColor(getResources().getColor(R.color.teal_200));
+                    resultTextLower.setTextColor(getResources().getColor(R.color.white));
 
-                resultTextUpper.setTextColor(getResources().getColor(R.color.teal_200));
-                resultTextLower.setTextColor(getResources().getColor(R.color.white));
-                return false;
-            }
-        });
-
-        resultTextLower.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                resultTextLower.setTextColor(getResources().getColor(R.color.teal_200));
-                resultTextUpper.setTextColor(getResources().getColor(R.color.white));
-
-                return false;
-            }
-        });
-
-
-        // auto sizing text according to the length
-
-        resultTextUpper.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-
-                if (i > 7 && i <= 11) {
-                    resultTextUpper.setTextSize(25);
-                } else if (i > 11 && i <= 14) {
-                    resultTextUpper.setTextSize(22);
-                    if (i == 14) {
-                        Toast.makeText(getApplicationContext(), "Maximum digits (15) reached", Toast.LENGTH_SHORT).show();
-                    }
-                } else if (i <= 7) {
-                    resultTextUpper.setTextSize(32);
-                } else {
-                    resultTextUpper.setTextSize(15);
-                }
-
-                double result = 0;
-
-                if (title.equals("Length conversion")) {
-
-                    try {
-                        //Kilometer
-                        if (unitIdxUpper == 0 && unitIdxLower == 0) {
-                            result = LengthMethods.kilometer_to_Kilometer(Double.parseDouble(charSequence.toString()));
+                    resultTextUpper.addTextChangedListener(new TextWatcher() {
+                        @Override
+                        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
                         }
 
-                        if (unitIdxUpper == 0 && unitIdxLower == 1) {
-                            result = LengthMethods.kilometer_to_Meter(Double.parseDouble(charSequence.toString()));
+                        @Override
+                        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                            // auto sizing text according to the length
+
+
+                            if (i > 7 && i <= 11) {
+                                resultTextUpper.setTextSize(25);
+                            } else if (i > 11 && i <= 14) {
+                                resultTextUpper.setTextSize(22);
+                                if (i == 14) {
+                                    Toast.makeText(getApplicationContext(), "Maximum digits (15) reached", Toast.LENGTH_SHORT).show();
+                                }
+                            } else if (i <= 7) {
+                                resultTextUpper.setTextSize(32);
+                            } else {
+                                resultTextUpper.setTextSize(15);
+                            }
+
+                            if(i<=15) {
+                                String result = resultAdapter.getResult(title, unitIdxUpper, unitIdxLower, charSequence.toString()) + "";
+
+                                if (result.length() > 7 && result.length() < 12) {
+                                    resultTextLower.setTextSize(28);
+                                } else if (result.length() >= 12 && result.length() < 15) {
+                                    resultTextLower.setTextSize(23);
+                                } else if (result.length() >= 15 && result.length() < 25) {
+                                    resultTextLower.setTextSize(18);
+                                } else if (result.length() >= 25) {
+                                    resultTextLower.setTextSize(15);
+                                } else {
+                                    resultTextLower.setTextSize(32);
+                                }
+
+                                resultTextLower.setText(result + "");
+                            }
 
                         }
 
-                        if (unitIdxUpper == 0 && unitIdxLower == 2) {
-                            result = LengthMethods.kilometer_to_Centimeter(Double.parseDouble(charSequence.toString()));
+                        @Override
+                        public void afterTextChanged(Editable editable) {
 
                         }
-
-                        if (unitIdxUpper == 0 && unitIdxLower == 3) {
-                            result = LengthMethods.kilometer_to_Millimeter(Double.parseDouble(charSequence.toString()));
-
-                        }
-
-                        if (unitIdxUpper == 0 && unitIdxLower == 4) {
-                            result = LengthMethods.kilometer_to_Inch(Double.parseDouble(charSequence.toString()));
-
-                        }
-
-                        if (unitIdxUpper == 0 && unitIdxLower == 5) {
-                            result = LengthMethods.kilometer_to_Mile(Double.parseDouble(charSequence.toString()));
-
-                        }
-
-                        if (unitIdxUpper == 0 && unitIdxLower == 6) {
-                            result = LengthMethods.kilometer_to_Foot(Double.parseDouble(charSequence.toString()));
-
-                        }
-
-
-                        if (unitIdxUpper == 0 && unitIdxLower == 7) {
-                            result = LengthMethods.kilometer_to_Yard(Double.parseDouble(charSequence.toString()));
-
-                        }
-
-                        //meter
-                        if (unitIdxUpper == 1 && unitIdxLower == 1) {
-                            result = LengthMethods.meter_to_Meter(Double.parseDouble(charSequence.toString()));
-
-                        }
-                        if (unitIdxUpper == 1 && unitIdxLower == 0) {
-                            result = LengthMethods.meter_to_Kilometer(Double.parseDouble(charSequence.toString()));
-
-                        }
-
-                        if (unitIdxUpper == 1 && unitIdxLower == 2) {
-                            result = LengthMethods.meter_to_Centimeter(Double.parseDouble(charSequence.toString()));
-                        }
-
-                        if (unitIdxUpper == 1 && unitIdxLower == 3) {
-                            result = LengthMethods.meter_to_Centimeter(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 1 && unitIdxLower == 4) {
-                            result = LengthMethods.meter_to_Inch(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 1 && unitIdxLower == 5) {
-                            result = LengthMethods.meter_to_Mile(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 1 && unitIdxLower == 6) {
-                            result = LengthMethods.meter_to_Foot(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 1 && unitIdxLower == 7) {
-                            result = LengthMethods.meter_to_Yard(Double.parseDouble(charSequence.toString()));
-                        }
-
-                        //centimeter
-                        if (unitIdxUpper == 2 && unitIdxLower == 2) {
-                            result = LengthMethods.centimeter_to_Centimeter(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 2 && unitIdxLower == 0) {
-                            result = LengthMethods.centimeter_to_Kilometer(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 2 && unitIdxLower == 1) {
-                            result = LengthMethods.centimeter_to_Meter(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 2 && unitIdxLower == 3) {
-                            result = LengthMethods.centimeter_to_Millimeter(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 2 && unitIdxLower == 4) {
-                            result = LengthMethods.centimeter_to_Inch(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 2 && unitIdxLower == 5) {
-                            result = LengthMethods.centimeter_to_Mile(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 2 && unitIdxLower == 6) {
-                            result = LengthMethods.centimeter_to_Foot(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 2 && unitIdxLower == 7) {
-                            result = LengthMethods.centimeter_to_Yard(Double.parseDouble(charSequence.toString()));
-                        }
-
-                    //millimeter
-                        if (unitIdxUpper == 3 && unitIdxLower == 3) {
-                            result = LengthMethods.millimeter_to_Millimeter(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 3 && unitIdxLower == 0) {
-                            result = LengthMethods.millimeter_to_Kilometer(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 3 && unitIdxLower == 1) {
-                            result = LengthMethods.millimeter_to_Meter(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 3 && unitIdxLower == 2) {
-                            result = LengthMethods.millimeter_to_Centimeter(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 3 && unitIdxLower == 4) {
-                            result = LengthMethods.millimeter_to_Inch(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 3 && unitIdxLower == 5) {
-                            result = LengthMethods.millimeter_to_Mile(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 3 && unitIdxLower == 6) {
-                            result = LengthMethods.millimeter_to_Foot(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 3 && unitIdxLower == 7) {
-                            result = LengthMethods.millimeter_to_Yard(Double.parseDouble(charSequence.toString()));
-                        }
-
-
-                    } catch (Exception e) {
-                        //Toast.makeText(converterActivity.this, e + "", Toast.LENGTH_SHORT).show();
-                        resultTextLower.setText("0");
-                    }
+                    });
 
                 }
+            });
+        } catch (Exception e) {
 
-                Toast.makeText(converterActivity.this, unitIdxUpper + "" + unitIdxLower, Toast.LENGTH_SHORT).show();
-                resultTextLower.setText(result + "");
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
-
-
-        resultTextLower.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                //resultTextLower.setText(charSequence);
-                if (i > 7 && i <= 11) {
-                    resultTextLower.setTextSize(25);
-                } else if (i > 11 && i <= 14) {
-                    resultTextLower.setTextSize(22);
-                    if (i == 14) {
-                        Toast.makeText(getApplicationContext(), "Maximum digits (15) reached", Toast.LENGTH_SHORT).show();
-                    }
-                }
-                else if (i <= 7) {
-                    resultTextLower.setTextSize(32);
-                }
-                else {
-                    resultTextLower.setTextSize(15);
-                }
-
-                double result = 0;
-
-                if (title.equals("Length conversion")) {
-
-                    try {
-                        //Inch
-                        if (unitIdxLower == 4 && unitIdxUpper == 4) {
-                            result = LengthMethods.inch_to_Inch(Double.parseDouble(charSequence.toString()));
-
-                        }
-
-                        if (unitIdxLower == 4 && unitIdxUpper == 5) {
-                            result = LengthMethods.inch_to_Mile(Double.parseDouble(charSequence.toString()));
-
-                        }
-                        if (unitIdxLower == 4 && unitIdxUpper == 6) {
-                            result = LengthMethods.inch_to_Foot(Double.parseDouble(charSequence.toString()));
-
-                        }
-
-                        if (unitIdxLower == 4 && unitIdxUpper == 7) {
-                            result = LengthMethods.inch_to_Yard(Double.parseDouble(charSequence.toString()));
-
-                        }
-
-                        if (unitIdxLower == 4 && unitIdxUpper == 0) {
-                            result = LengthMethods.inch_to_Kilometer(Double.parseDouble(charSequence.toString()));
-
-                        }
-
-                        if (unitIdxLower == 4 && unitIdxUpper == 1) {
-                            result = LengthMethods.inch_to_Meter(Double.parseDouble(charSequence.toString()));
-                        }
-
-                        if (unitIdxLower == 4 && unitIdxUpper == 2) {
-                            result = LengthMethods.inch_to_Centimeter(Double.parseDouble(charSequence.toString()));
-
-                        }
-
-
-                        if (unitIdxLower == 4 && unitIdxUpper == 3) {
-                            result = LengthMethods.inch_to_Millimeter(Double.parseDouble(charSequence.toString()));
-
-                        }
-
-                        //mile
-                        if (unitIdxUpper == 5 && unitIdxLower == 5) {
-                            result = LengthMethods.mile_to_Meter(Double.parseDouble(charSequence.toString()));
-
-                        }
-                        if (unitIdxUpper == 4 && unitIdxLower == 5) {
-                            result = LengthMethods.mile_to_Inch(Double.parseDouble(charSequence.toString()));
-                        }
-
-                        if (unitIdxUpper == 6 && unitIdxLower == 5) {
-                            result = LengthMethods.mile_to_Foot(Double.parseDouble(charSequence.toString()));
-                        }
-
-                        if (unitIdxUpper == 7 && unitIdxLower == 5) {
-                            result = LengthMethods.mile_to_Yard(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 0 && unitIdxLower == 5) {
-                            result = LengthMethods.mile_to_Kilometer(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 1 && unitIdxLower == 5) {
-                            result = LengthMethods.mile_to_Meter(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 2 && unitIdxLower == 5) {
-                            result = LengthMethods.mile_to_Centimeter(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 3 && unitIdxLower == 5) {
-                            result = LengthMethods.mile_to_Millimeter(Double.parseDouble(charSequence.toString()));
-                        }
-
-                        //foot
-                        if (unitIdxUpper == 6 && unitIdxLower == 6) {
-                            result = LengthMethods.foot_to_Foot(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 4 && unitIdxLower == 6) {
-                            result = LengthMethods.foot_to_Inch(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 5 && unitIdxLower == 6) {
-                            result = LengthMethods.foot_to_Mile(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 7 && unitIdxLower == 6) {
-                            result = LengthMethods.foot_to_Yard(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 0 && unitIdxLower == 6) {
-                            result = LengthMethods.foot_to_Kilometer(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 1 && unitIdxLower == 6) {
-                            result = LengthMethods.foot_to_Meter(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 2 && unitIdxLower == 6) {
-                            result = LengthMethods.foot_to_Centimeter(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 3 && unitIdxLower == 6) {
-                            result = LengthMethods.foot_to_Millimeter(Double.parseDouble(charSequence.toString()));
-                        }
-
-                        //yard
-                        if (unitIdxUpper == 7 && unitIdxLower == 7) {
-                            result = LengthMethods.yard_to_Yard(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 4 && unitIdxLower == 7) {
-                            result = LengthMethods.yard_to_Inch(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 5 && unitIdxLower == 7) {
-                            result = LengthMethods.yard_to_Mile(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 6 && unitIdxLower == 7) {
-                            result = LengthMethods.yard_to_Foot(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 0 && unitIdxLower == 7) {
-                            result = LengthMethods.yard_to_Kilometer(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 1 && unitIdxLower == 7) {
-                            result = LengthMethods.yard_to_Meter(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 2 && unitIdxLower == 7) {
-                            result = LengthMethods.yard_to_Centimeter(Double.parseDouble(charSequence.toString()));
-                        }
-                        if (unitIdxUpper == 3 && unitIdxLower == 7) {
-                            result = LengthMethods.yard_to_Millimeter(Double.parseDouble(charSequence.toString()));
-                        }
-
-
-                    } catch (Exception e) {
-                        //Toast.makeText(converterActivity.this, e + "", Toast.LENGTH_SHORT).show();
-                        resultTextUpper.setText("0");
-                    }
-
-                }
-
-                Toast.makeText(converterActivity.this, unitIdxUpper + "" + unitIdxLower, Toast.LENGTH_SHORT).show();
-                resultTextUpper.setText(result + "");
-
-
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
+        }
 
 
 //setting unit on textview
@@ -480,10 +176,14 @@ public class converterActivity extends AppCompatActivity {
 
 
     private void startUnitSelect() {
+
         Intent intentUnitSelect = new Intent(this, SelectUnitActivity.class);
         intentUnitSelect.putExtra("metricUnits", metricUnitList);
         intentUnitSelect.putExtra("imperialUnits", imperialUnitList);
         startActivityForResult(intentUnitSelect, REQUEST_CODE);
+
+        resultTextUpper.setText("0");
+        resultTextLower.setText("0");
     }
 
     //
@@ -509,9 +209,7 @@ public class converterActivity extends AppCompatActivity {
                 if (textViewSelected == 0) {
                     unitTextUpper.setText(unitText);
                     unitIdxUpper = unitId;
-                }
-
-                else if (textViewSelected == 1) {
+                } else if (textViewSelected == 1) {
                     unitTextLower.setText(unitText);
                     unitIdxLower = unitId;
                 }
