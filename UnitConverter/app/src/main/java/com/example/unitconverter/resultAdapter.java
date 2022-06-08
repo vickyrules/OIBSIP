@@ -255,8 +255,7 @@ public class resultAdapter {
                 if (unitIdxUpper == 3 && unitIdxLower == 7) {
                     result = LengthMethods.millimeter_to_Yard(Double.parseDouble(input));
                 }
-            }
-            else if (title.equals("Temperature conversion")) {
+            } else if (title.equals("Temperature conversion")) {
                 //celsius
                 if (unitIdxUpper == 0 && unitIdxLower == 0) {
                     return (TemperatureMethods.celsius_to_Celsius(Double.parseDouble(input)));
@@ -314,13 +313,105 @@ public class resultAdapter {
                     return (TemperatureMethods.fah_to_Kelvin(Double.parseDouble(input)));
                 }
 
+            } else if (title.equals("Area conversion")) {
+            } else if (title.equals("Volume conversion")) {
+            } else if (title.equals("Weight conversion")) {
+            } else if (title.equals("Speed conversion")) {
+                // kms
+                if (unitIdxUpper == 0 && unitIdxLower == 0) {
+                    return (SpeedMethods.kms_to_Kms(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 0 && unitIdxLower == 1) {
+                    return (SpeedMethods.kms_to_Ms(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 0 && unitIdxLower == 2) {
+                    return (SpeedMethods.kms_to_Kmh(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 0 && unitIdxLower == 3) {
+                    return (SpeedMethods.kms_to_C(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 0 && unitIdxLower == 4) {
+                    return (SpeedMethods.kms_to_Mph(Double.parseDouble(input)));
+                }
+                // m/s
+                if (unitIdxUpper == 1 && unitIdxLower == 0) {
+                    return (SpeedMethods.ms_to_Kms(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 1 && unitIdxLower == 1) {
+                    return (SpeedMethods.ms_to_Ms(Double.parseDouble(input)));
+                }
+
+                if (unitIdxUpper == 1 && unitIdxLower == 2) {
+                    return (SpeedMethods.ms_to_Kmh(Double.parseDouble(input)));
+                }
+
+                if (unitIdxUpper == 1 && unitIdxLower == 3) {
+                    return (SpeedMethods.ms_to_C(Double.parseDouble(input)));
+                }
+
+                if (unitIdxUpper == 1 && unitIdxLower == 4) {
+                    return (SpeedMethods.ms_to_Mph(Double.parseDouble(input)));
+                }
+
+                // km/h
+                if (unitIdxUpper == 2 && unitIdxLower == 0) {
+                    return (SpeedMethods.kmh_to_Kms(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 2 && unitIdxLower == 1) {
+                    return (SpeedMethods.kmh_to_Ms(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 2 && unitIdxLower == 2) {
+                    return (SpeedMethods.kmh_to_Kmh(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 2 && unitIdxLower == 3) {
+                    return (SpeedMethods.kmh_to_C(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 2 && unitIdxLower == 4) {
+                    return (SpeedMethods.kmh_to_Mph(Double.parseDouble(input)));
+                }
+
+                //speed of light (C)
+
+                if (unitIdxUpper == 3 && unitIdxLower == 0) {
+                    return (SpeedMethods.c_to_Kms(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 3 && unitIdxLower == 1) {
+                    return (SpeedMethods.c_to_Ms(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 3 && unitIdxLower == 2) {
+                    return (SpeedMethods.c_to_Kmh(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 3 && unitIdxLower == 3) {
+                    return (SpeedMethods.c_to_C(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 3 && unitIdxLower == 4) {
+                    return (SpeedMethods.c_to_Mph(Double.parseDouble(input)));
+                }
+
+                //mph
+
+                if (unitIdxUpper == 4 && unitIdxLower == 0) {
+                    return (SpeedMethods.mph_to_Kms(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 4 && unitIdxLower == 1) {
+                    return (SpeedMethods.mph_to_Ms(Double.parseDouble(input)));
+                }
+
+                if (unitIdxUpper == 4 && unitIdxLower == 2) {
+                    return (SpeedMethods.mph_to_Kmh(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 4 && unitIdxLower == 3) {
+                    return (SpeedMethods.mph_to_C(Double.parseDouble(input)));
+                }
+
+                if (unitIdxUpper == 4 && unitIdxLower == 4) {
+                    return (SpeedMethods.mph_to_Mph(Double.parseDouble(input)));
+                }
+
+
+            } else if (title.equals("Power conversion")) {
+            } else if (title.equals("Pressure conversion")) {
             }
-            else if (title.equals("Area conversion")){}
-            else if (title.equals("Volume conversion")){}
-            else if (title.equals("Weight conversion")){}
-            else if (title.equals("Speed conversion")){}
-            else if (title.equals("Power conversion")){}
-            else if (title.equals("Pressure conversion")){}
 
 
         } catch (Exception e) {

@@ -125,7 +125,7 @@ public class SpeedMethods {
     }
 
     //mph to C method
-    public static double mph_to_c(double value) {
+    public static double mph_to_C(double value) {
         return (value  / 670624775.152896030699124484488);
     }
 }
