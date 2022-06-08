@@ -255,7 +255,8 @@ public class resultAdapter {
                 if (unitIdxUpper == 3 && unitIdxLower == 7) {
                     result = LengthMethods.millimeter_to_Yard(Double.parseDouble(input));
                 }
-            } else if (title.equals("Temperature conversion")) {
+            }
+            else if (title.equals("Temperature conversion")) {
                 //celsius
                 if (unitIdxUpper == 0 && unitIdxLower == 0) {
                     return (TemperatureMethods.celsius_to_Celsius(Double.parseDouble(input)));
@@ -314,6 +315,14 @@ public class resultAdapter {
                 }
 
             }
+            else if (title.equals("Area conversion")){}
+            else if (title.equals("Volume conversion")){}
+            else if (title.equals("Weight conversion")){}
+            else if (title.equals("Speed conversion")){}
+            else if (title.equals("Power conversion")){}
+            else if (title.equals("Pressure conversion")){}
+
+
         } catch (Exception e) {
 
         }
