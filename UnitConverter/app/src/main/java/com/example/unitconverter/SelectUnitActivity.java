@@ -11,6 +11,7 @@ import android.content.res.ColorStateList;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.preference.Preference;
 import android.view.MenuItem;
 import android.view.View;
@@ -27,6 +28,7 @@ public class SelectUnitActivity extends AppCompatActivity {
     static RadioGroup radioGroupImperial;
     TextView imperialTxt, metricTxt;
     View endline;
+    boolean doubleBackToExitPressedOnce = false;
 
 
     static ArrayList<String> metricUnitList = new ArrayList<String>();
@@ -39,8 +41,8 @@ public class SelectUnitActivity extends AppCompatActivity {
         setContentView(R.layout.activity_select_unit);
         getSupportActionBar().setTitle("Select Unit");
 
-       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+//       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         radioGroupMetric = (RadioGroup) findViewById(R.id.radioGpMatric);
         radioGroupImperial = (RadioGroup) findViewById(R.id.radioGpImperial);
@@ -110,7 +112,7 @@ public class SelectUnitActivity extends AppCompatActivity {
                         setResult(Activity.RESULT_OK, intent);
                         finish();
                     }
-                }, 300);
+                }, 500);
             }
         });
 
@@ -132,7 +134,7 @@ public class SelectUnitActivity extends AppCompatActivity {
                         setResult(Activity.RESULT_OK, intent);
                         finish();
                     }
-                }, 300);
+                }, 500);
             }
 
         });
@@ -144,10 +146,24 @@ public class SelectUnitActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Toast.makeText(this, "Press on back arrow", Toast.LENGTH_SHORT).show();
-    }
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
 
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 2000);
+    }
     @Override
+
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
         if (item.getItemId() == android.R.id.home) {
