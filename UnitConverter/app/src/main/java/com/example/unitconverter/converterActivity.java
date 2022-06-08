@@ -22,16 +22,23 @@ import android.widget.Toast;
 
 import com.google.android.material.internal.TextWatcherAdapter;
 
+import java.util.ArrayList;
+
 public class converterActivity extends AppCompatActivity {
 
-    LinearLayout upperLayout,bottomLayout;
-    TextView unitTextUpper ;
+    LinearLayout upperLayout, bottomLayout;
+    TextView unitTextUpper;
     TextView unitTextLower;
-    EditText resultTextUpper,resultTextLower;
-    String unitText ;
+    EditText resultTextUpper, resultTextLower;
+    String unitText;
     int unitId;
+    int unitIdxUpper = 0 , unitIdxLower = 0;
     int textViewSelected = -1;
     float textSize;
+
+    String title;
+    ArrayList<String> metricUnitList ;
+    ArrayList<String> imperialUnitList ;
 
     private static final int REQUEST_CODE = 101;
 
@@ -41,7 +48,17 @@ public class converterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_converter);
 
-        String title  = getIntent().getStringExtra("title");
+        String title = getIntent().getStringExtra("title");
+
+        metricUnitList = new ArrayList<String>();
+        imperialUnitList = new ArrayList<String>();
+
+        metricUnitList.clear();
+        imperialUnitList.clear();
+
+        metricUnitList = (ArrayList<String>) getIntent().getSerializableExtra("metricUnits");
+        imperialUnitList = (ArrayList<String>) getIntent().getSerializableExtra("imperialUnits");
+
         getSupportActionBar().setTitle(title);
         //getSupportActionBar().setSubtitle("us");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -54,7 +71,23 @@ public class converterActivity extends AppCompatActivity {
         resultTextUpper = (EditText) findViewById(R.id.resultTextUpper);
         resultTextLower = (EditText) findViewById(R.id.resultTextLower);
 
+
+        //
+        if(imperialUnitList.size() > 0){
+            unitIdxLower = metricUnitList.size();
+        unitTextUpper.setText(metricUnitList.get(unitIdxUpper));
+        unitTextLower.setText(imperialUnitList.get(0));}
+
+        else{
+            unitIdxLower = 1;
+            unitTextUpper.setText(metricUnitList.get(unitIdxUpper));
+            unitTextLower.setText(metricUnitList.get(unitIdxLower));}
+
+
+
+
         //change color on touch
+
 
         resultTextUpper.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -66,18 +99,18 @@ public class converterActivity extends AppCompatActivity {
             }
         });
 
-       resultTextLower.setOnTouchListener(new View.OnTouchListener() {
-           @Override
-           public boolean onTouch(View view, MotionEvent motionEvent) {
-               resultTextLower.setTextColor(getResources().getColor(R.color.teal_200));
-               resultTextUpper.setTextColor(getResources().getColor(R.color.white));
+        resultTextLower.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                resultTextLower.setTextColor(getResources().getColor(R.color.teal_200));
+                resultTextUpper.setTextColor(getResources().getColor(R.color.white));
 
-               return false;
-           }
-       });
+                return false;
+            }
+        });
 
 
-       // auto sizing text according to the length
+        // auto sizing text according to the length
 
         resultTextUpper.addTextChangedListener(new TextWatcher() {
             @Override
@@ -87,22 +120,78 @@ public class converterActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                resultTextLower.setText(charSequence);
-                if(i>7 && i<=11){
+
+
+                if (i > 7 && i <= 11) {
                     resultTextUpper.setTextSize(25);
-                }
-
-                else if (i>11 && i<=14){
+                } else if (i > 11 && i <= 14) {
                     resultTextUpper.setTextSize(22);
-                    if(i==14){
-                    Toast.makeText(getApplicationContext(), "Maximum digits (15) reached", Toast.LENGTH_SHORT).show();}
-                }
-                else if (i<=7){
+                    if (i == 14) {
+                        Toast.makeText(getApplicationContext(), "Maximum digits (15) reached", Toast.LENGTH_SHORT).show();
+                    }
+                } else if (i <= 7) {
                     resultTextUpper.setTextSize(32);
+                } else {
+                    resultTextUpper.setTextSize(15);
                 }
 
-                else{
-                    resultTextUpper.setTextSize(15);
+                double result = 0;
+
+                if (title.equals("Length conversion")) {
+
+                    try {
+
+                        if (unitIdxUpper == 0 && unitIdxLower == 0) {
+                            result = LengthMethods.kilometer_to_Kilometer(Double.parseDouble(charSequence.toString()));
+
+                        }
+
+                        if (unitIdxUpper == 0 && unitIdxLower == 1) {
+                            result = LengthMethods.kilometer_to_Meter(Double.parseDouble(charSequence.toString()));
+
+                        }
+
+                        if (unitIdxUpper == 0 && unitIdxLower == 2) {
+                            result = LengthMethods.kilometer_to_Centimeter(Double.parseDouble(charSequence.toString()));
+
+                        }
+
+                        if (unitIdxUpper == 0 && unitIdxLower == 3) {
+                            result = LengthMethods.kilometer_to_Millimeter(Double.parseDouble(charSequence.toString()));
+
+                        }
+
+                        if (unitIdxUpper == 1 && unitIdxLower == 1) {
+                            result = LengthMethods.meter_to_Meter(Double.parseDouble(charSequence.toString()));
+
+                        }
+                        if (unitIdxUpper == 1 && unitIdxLower == 0) {
+                            result = LengthMethods.meter_to_Kilometer(Double.parseDouble(charSequence.toString()));
+
+                        }
+
+                        if (unitIdxUpper == 1 && unitIdxLower == 2) {
+                            result = LengthMethods.meter_to_Centimeter(Double.parseDouble(charSequence.toString()));
+                        }
+
+                        if (unitIdxUpper == 1 && unitIdxLower == 3) {
+                            result = LengthMethods.meter_to_Centimeter(Double.parseDouble(charSequence.toString()));
+
+                        }
+
+
+
+
+
+
+
+                        Toast.makeText(converterActivity.this, unitIdxUpper + "" + unitIdxLower, Toast.LENGTH_SHORT).show();
+                        resultTextLower.setText(result + "");
+                    } catch (Exception e) {
+                        Toast.makeText(converterActivity.this, e + "", Toast.LENGTH_SHORT).show();
+                        resultTextLower.setText("0");
+                    }
+
                 }
 
             }
@@ -123,22 +212,22 @@ public class converterActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 //resultTextLower.setText(charSequence);
-                if(i>7 && i<=11){
+                if (i > 7 && i <= 11) {
                     resultTextLower.setTextSize(25);
-                }
-
-                else if (i>11 && i<=14){
+                } else if (i > 11 && i <= 14) {
                     resultTextLower.setTextSize(22);
-                    if(i==14){
-                    Toast.makeText(getApplicationContext(), "Maximum digits (15) reached", Toast.LENGTH_SHORT).show();}
+                    if (i == 14) {
+                        Toast.makeText(getApplicationContext(), "Maximum digits (15) reached", Toast.LENGTH_SHORT).show();
+                    }
                 }
-                else if (i<=7){
+                else if (i <= 7) {
                     resultTextLower.setTextSize(32);
                 }
-
-                else{
+                else {
                     resultTextLower.setTextSize(15);
                 }
+
+
 
             }
 
@@ -147,8 +236,6 @@ public class converterActivity extends AppCompatActivity {
 
             }
         });
-
-
 
 
 //setting unit on textview
@@ -170,14 +257,15 @@ public class converterActivity extends AppCompatActivity {
             }
         });
 
+
     }
 
 
     private void startUnitSelect() {
-        Intent intentUnitSelect = new Intent(this,SelectUnitActivity.class);;
-        intentUnitSelect.putExtra("metricUnits",getIntent().getSerializableExtra("metricUnits"));
-        intentUnitSelect.putExtra("imperialUnits",getIntent().getSerializableExtra("imperialUnits"));
-        startActivityForResult(intentUnitSelect,REQUEST_CODE);
+        Intent intentUnitSelect = new Intent(this, SelectUnitActivity.class);
+        intentUnitSelect.putExtra("metricUnits", metricUnitList);
+        intentUnitSelect.putExtra("imperialUnits", imperialUnitList);
+        startActivityForResult(intentUnitSelect, REQUEST_CODE);
     }
 
     //
@@ -195,16 +283,19 @@ public class converterActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(resultCode == RESULT_OK){
-            if(requestCode == REQUEST_CODE && data !=null) {
-                unitId = data.getIntExtra("metricId",0);
+        if (resultCode == RESULT_OK) {
+            if (requestCode == REQUEST_CODE && data != null) {
+                unitId = data.getIntExtra("metricId", 0);
                 unitText = data.getStringExtra("unitText");
 
-                if(textViewSelected == 0){
+                if (textViewSelected == 0) {
                     unitTextUpper.setText(unitText);
+                    unitIdxUpper = unitId;
                 }
-                else if (textViewSelected == 1){
+
+                else if (textViewSelected == 1) {
                     unitTextLower.setText(unitText);
+                    unitIdxLower = unitId;
                 }
             }
 

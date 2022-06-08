@@ -104,7 +104,7 @@ public class SelectUnitActivity extends AppCompatActivity {
                         int radioButtonID = radioGroupImperial.getCheckedRadioButtonId();
                         View radioButton = radioGroupImperial.findViewById(radioButtonID);
                         int idx = radioGroupImperial.indexOfChild(radioButton);
-                        intent.putExtra("metricId",idx);
+                        intent.putExtra("metricId",idx+metricUnitList.size());
                         intent.putExtra("unitText",imperailUnitList.get(idx));
                         setResult(Activity.RESULT_OK, intent);
                         finish();
