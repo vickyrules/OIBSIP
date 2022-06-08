@@ -251,18 +251,22 @@ public class converterActivity extends AppCompatActivity {
                         if (unitIdxUpper == 3 && unitIdxLower == 2) {
                             result = LengthMethods.millimeter_to_Centimeter(Double.parseDouble(charSequence.toString()));
                         }
-
-
-
-
-
-
-
-
+                        if (unitIdxUpper == 3 && unitIdxLower == 4) {
+                            result = LengthMethods.millimeter_to_Inch(Double.parseDouble(charSequence.toString()));
+                        }
+                        if (unitIdxUpper == 3 && unitIdxLower == 5) {
+                            result = LengthMethods.millimeter_to_Mile(Double.parseDouble(charSequence.toString()));
+                        }
+                        if (unitIdxUpper == 3 && unitIdxLower == 6) {
+                            result = LengthMethods.millimeter_to_Foot(Double.parseDouble(charSequence.toString()));
+                        }
+                        if (unitIdxUpper == 3 && unitIdxLower == 7) {
+                            result = LengthMethods.millimeter_to_Yard(Double.parseDouble(charSequence.toString()));
+                        }
 
 
                     } catch (Exception e) {
-                        Toast.makeText(converterActivity.this, e + "", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(converterActivity.this, e + "", Toast.LENGTH_SHORT).show();
                         resultTextLower.setText("0");
                     }
 
