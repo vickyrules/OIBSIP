@@ -225,6 +225,18 @@ public class converterActivity extends AppCompatActivity {
                         if (unitIdxUpper == 2 && unitIdxLower == 3) {
                             result = LengthMethods.centimeter_to_Millimeter(Double.parseDouble(charSequence.toString()));
                         }
+                        if (unitIdxUpper == 2 && unitIdxLower == 4) {
+                            result = LengthMethods.centimeter_to_Inch(Double.parseDouble(charSequence.toString()));
+                        }
+                        if (unitIdxUpper == 2 && unitIdxLower == 5) {
+                            result = LengthMethods.centimeter_to_Mile(Double.parseDouble(charSequence.toString()));
+                        }
+                        if (unitIdxUpper == 2 && unitIdxLower == 6) {
+                            result = LengthMethods.centimeter_to_Foot(Double.parseDouble(charSequence.toString()));
+                        }
+                        if (unitIdxUpper == 2 && unitIdxLower == 7) {
+                            result = LengthMethods.centimeter_to_Yard(Double.parseDouble(charSequence.toString()));
+                        }
 
                     //millimeter
                         if (unitIdxUpper == 3 && unitIdxLower == 3) {
