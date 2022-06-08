@@ -109,17 +109,19 @@ public class converterActivity extends AppCompatActivity {
                             // auto sizing text according to the length
 
 
-                            if (i > 7 && i <= 11) {
+                            if (i > 7 && i < 11) {
                                 resultTextUpper.setTextSize(25);
-                            } else if (i > 11 && i <= 14) {
-                                resultTextUpper.setTextSize(22);
-                                if (i == 14) {
-                                    Toast.makeText(getApplicationContext(), "Maximum digits (15) reached", Toast.LENGTH_SHORT).show();
-                                }
+                            } else if (i >= 11 && i <= 14) {
+                                resultTextUpper.setTextSize(18);
+
                             } else if (i <= 7) {
                                 resultTextUpper.setTextSize(32);
                             } else {
-                                resultTextUpper.setTextSize(15);
+                                resultTextUpper.setTextSize(12);
+                            }
+
+                            if (charSequence.length() == 15) {
+                                Toast.makeText(getApplicationContext(), "Maximum digits (15) reached", Toast.LENGTH_SHORT).show();
                             }
 
                             if(i<=15) {
@@ -128,11 +130,11 @@ public class converterActivity extends AppCompatActivity {
                                 if (result.length() > 7 && result.length() < 12) {
                                     resultTextLower.setTextSize(28);
                                 } else if (result.length() >= 12 && result.length() < 15) {
-                                    resultTextLower.setTextSize(23);
-                                } else if (result.length() >= 15 && result.length() < 25) {
-                                    resultTextLower.setTextSize(18);
-                                } else if (result.length() >= 25) {
+                                    resultTextLower.setTextSize(21);
+                                } else if (result.length() >= 15 && result.length() < 20) {
                                     resultTextLower.setTextSize(15);
+                                } else if (result.length() >= 20) {
+                                    resultTextLower.setTextSize(13);
                                 } else {
                                     resultTextLower.setTextSize(32);
                                 }
@@ -185,8 +187,6 @@ public class converterActivity extends AppCompatActivity {
         intentUnitSelect.putExtra("imperialUnits", imperialUnitList);
         startActivityForResult(intentUnitSelect, REQUEST_CODE);
 
-        resultTextUpper.setText("0");
-        resultTextLower.setText("0");
     }
 
     //
