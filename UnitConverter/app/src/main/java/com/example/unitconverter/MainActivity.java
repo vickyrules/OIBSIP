@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                 unitsListImperial.clear();
 
                 unitsListMetric.add("Liter (l) ");
-                unitsListMetric.add("milli_liter (ml) ");
+                unitsListMetric.add("Milliliter (ml) ");
                 unitsListMetric.add("Cubic meter (m\u00b3) ");
                 unitsListMetric.add("Cubic centimeter (cm\u00b3) ");
                 unitsListMetric.add("Cubic millimeter (mm\u00b3) ");
