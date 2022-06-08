@@ -308,6 +308,143 @@ public class converterActivity extends AppCompatActivity {
                     resultTextLower.setTextSize(15);
                 }
 
+                double result = 0;
+
+                if (title.equals("Length conversion")) {
+
+                    try {
+                        //Inch
+                        if (unitIdxLower == 4 && unitIdxUpper == 4) {
+                            result = LengthMethods.inch_to_Inch(Double.parseDouble(charSequence.toString()));
+
+                        }
+
+                        if (unitIdxLower == 4 && unitIdxUpper == 5) {
+                            result = LengthMethods.inch_to_Mile(Double.parseDouble(charSequence.toString()));
+
+                        }
+                        if (unitIdxLower == 4 && unitIdxUpper == 6) {
+                            result = LengthMethods.inch_to_Foot(Double.parseDouble(charSequence.toString()));
+
+                        }
+
+                        if (unitIdxLower == 4 && unitIdxUpper == 7) {
+                            result = LengthMethods.inch_to_Yard(Double.parseDouble(charSequence.toString()));
+
+                        }
+
+                        if (unitIdxLower == 4 && unitIdxUpper == 0) {
+                            result = LengthMethods.inch_to_Kilometer(Double.parseDouble(charSequence.toString()));
+
+                        }
+
+                        if (unitIdxLower == 4 && unitIdxUpper == 1) {
+                            result = LengthMethods.inch_to_Meter(Double.parseDouble(charSequence.toString()));
+                        }
+
+                        if (unitIdxLower == 4 && unitIdxUpper == 2) {
+                            result = LengthMethods.inch_to_Centimeter(Double.parseDouble(charSequence.toString()));
+
+                        }
+
+
+                        if (unitIdxLower == 4 && unitIdxUpper == 3) {
+                            result = LengthMethods.inch_to_Millimeter(Double.parseDouble(charSequence.toString()));
+
+                        }
+
+                        //mile
+                        if (unitIdxUpper == 5 && unitIdxLower == 5) {
+                            result = LengthMethods.mile_to_Meter(Double.parseDouble(charSequence.toString()));
+
+                        }
+                        if (unitIdxUpper == 4 && unitIdxLower == 5) {
+                            result = LengthMethods.mile_to_Inch(Double.parseDouble(charSequence.toString()));
+                        }
+
+                        if (unitIdxUpper == 6 && unitIdxLower == 5) {
+                            result = LengthMethods.mile_to_Foot(Double.parseDouble(charSequence.toString()));
+                        }
+
+                        if (unitIdxUpper == 7 && unitIdxLower == 5) {
+                            result = LengthMethods.mile_to_Yard(Double.parseDouble(charSequence.toString()));
+                        }
+                        if (unitIdxUpper == 0 && unitIdxLower == 5) {
+                            result = LengthMethods.mile_to_Kilometer(Double.parseDouble(charSequence.toString()));
+                        }
+                        if (unitIdxUpper == 1 && unitIdxLower == 5) {
+                            result = LengthMethods.mile_to_Meter(Double.parseDouble(charSequence.toString()));
+                        }
+                        if (unitIdxUpper == 2 && unitIdxLower == 5) {
+                            result = LengthMethods.mile_to_Centimeter(Double.parseDouble(charSequence.toString()));
+                        }
+                        if (unitIdxUpper == 3 && unitIdxLower == 5) {
+                            result = LengthMethods.mile_to_Millimeter(Double.parseDouble(charSequence.toString()));
+                        }
+
+                        //foot
+                        if (unitIdxUpper == 6 && unitIdxLower == 6) {
+                            result = LengthMethods.foot_to_Foot(Double.parseDouble(charSequence.toString()));
+                        }
+                        if (unitIdxUpper == 4 && unitIdxLower == 6) {
+                            result = LengthMethods.foot_to_Inch(Double.parseDouble(charSequence.toString()));
+                        }
+                        if (unitIdxUpper == 5 && unitIdxLower == 6) {
+                            result = LengthMethods.foot_to_Mile(Double.parseDouble(charSequence.toString()));
+                        }
+                        if (unitIdxUpper == 7 && unitIdxLower == 6) {
+                            result = LengthMethods.foot_to_Yard(Double.parseDouble(charSequence.toString()));
+                        }
+                        if (unitIdxUpper == 0 && unitIdxLower == 6) {
+                            result = LengthMethods.foot_to_Kilometer(Double.parseDouble(charSequence.toString()));
+                        }
+                        if (unitIdxUpper == 1 && unitIdxLower == 6) {
+                            result = LengthMethods.foot_to_Meter(Double.parseDouble(charSequence.toString()));
+                        }
+                        if (unitIdxUpper == 2 && unitIdxLower == 6) {
+                            result = LengthMethods.foot_to_Centimeter(Double.parseDouble(charSequence.toString()));
+                        }
+                        if (unitIdxUpper == 3 && unitIdxLower == 6) {
+                            result = LengthMethods.foot_to_Millimeter(Double.parseDouble(charSequence.toString()));
+                        }
+
+                        //yard
+                        if (unitIdxUpper == 7 && unitIdxLower == 7) {
+                            result = LengthMethods.yard_to_Yard(Double.parseDouble(charSequence.toString()));
+                        }
+                        if (unitIdxUpper == 4 && unitIdxLower == 7) {
+                            result = LengthMethods.yard_to_Inch(Double.parseDouble(charSequence.toString()));
+                        }
+                        if (unitIdxUpper == 5 && unitIdxLower == 7) {
+                            result = LengthMethods.yard_to_Mile(Double.parseDouble(charSequence.toString()));
+                        }
+                        if (unitIdxUpper == 6 && unitIdxLower == 7) {
+                            result = LengthMethods.yard_to_Foot(Double.parseDouble(charSequence.toString()));
+                        }
+                        if (unitIdxUpper == 0 && unitIdxLower == 7) {
+                            result = LengthMethods.yard_to_Kilometer(Double.parseDouble(charSequence.toString()));
+                        }
+                        if (unitIdxUpper == 1 && unitIdxLower == 7) {
+                            result = LengthMethods.yard_to_Meter(Double.parseDouble(charSequence.toString()));
+                        }
+                        if (unitIdxUpper == 2 && unitIdxLower == 7) {
+                            result = LengthMethods.yard_to_Centimeter(Double.parseDouble(charSequence.toString()));
+                        }
+                        if (unitIdxUpper == 3 && unitIdxLower == 7) {
+                            result = LengthMethods.yard_to_Millimeter(Double.parseDouble(charSequence.toString()));
+                        }
+
+
+                    } catch (Exception e) {
+                        //Toast.makeText(converterActivity.this, e + "", Toast.LENGTH_SHORT).show();
+                        resultTextUpper.setText("0");
+                    }
+
+                }
+
+                Toast.makeText(converterActivity.this, unitIdxUpper + "" + unitIdxLower, Toast.LENGTH_SHORT).show();
+                resultTextUpper.setText(result + "");
+
 
 
             }
