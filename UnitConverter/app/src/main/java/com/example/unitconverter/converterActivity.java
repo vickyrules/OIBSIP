@@ -199,6 +199,18 @@ public class converterActivity extends AppCompatActivity {
                         if (unitIdxUpper == 1 && unitIdxLower == 3) {
                             result = LengthMethods.meter_to_Centimeter(Double.parseDouble(charSequence.toString()));
                         }
+                        if (unitIdxUpper == 1 && unitIdxLower == 4) {
+                            result = LengthMethods.meter_to_Inch(Double.parseDouble(charSequence.toString()));
+                        }
+                        if (unitIdxUpper == 1 && unitIdxLower == 5) {
+                            result = LengthMethods.meter_to_Mile(Double.parseDouble(charSequence.toString()));
+                        }
+                        if (unitIdxUpper == 1 && unitIdxLower == 6) {
+                            result = LengthMethods.meter_to_Foot(Double.parseDouble(charSequence.toString()));
+                        }
+                        if (unitIdxUpper == 1 && unitIdxLower == 7) {
+                            result = LengthMethods.meter_to_Yard(Double.parseDouble(charSequence.toString()));
+                        }
 
                         //centimeter
                         if (unitIdxUpper == 2 && unitIdxLower == 2) {
