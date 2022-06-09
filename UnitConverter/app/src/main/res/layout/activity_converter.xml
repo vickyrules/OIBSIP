@@ -60,6 +60,7 @@
                 android:layout_height="wrap_content"
                 android:autoSizeTextType="uniform"
                 android:editable="true"
+                android:focusable="true"
                 android:hint="enter"
                 android:cursorVisible="true"
                 android:elevation="100dp"

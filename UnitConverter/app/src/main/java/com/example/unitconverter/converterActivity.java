@@ -76,6 +76,7 @@ public class converterActivity extends AppCompatActivity {
         resultTextLower = (TextView) findViewById(R.id.resultTextLower);
 
 
+
         //
         if (imperialUnitList.size() > 0) {
             unitIdxLower = metricUnitList.size();
