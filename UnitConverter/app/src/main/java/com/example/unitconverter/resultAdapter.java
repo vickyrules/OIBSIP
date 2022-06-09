@@ -315,9 +315,177 @@ public class resultAdapter {
                 }
 
             }
-            else if (title.equals("Area conversion")) {}
+            else if (title.equals("Area conversion")) {
+
+            }
             else if (title.equals("Volume conversion")) {}
-            else if (title.equals("Weight conversion")) {}
+            else if (title.equals("Weight conversion")) {
+                // kg
+                if (unitIdxUpper == 0 && unitIdxLower == 0) {
+                    return (WeightMethods.kg_to_Kg(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 0 && unitIdxLower == 1) {
+                    return (WeightMethods.kg_to_G(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 0 && unitIdxLower == 2) {
+                    return (WeightMethods.kg_to_Mg(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 0 && unitIdxLower == 3) {
+                    return (WeightMethods.kg_to_T(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 0 && unitIdxLower == 4) {
+                    return (WeightMethods.kg_to_Lb(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 0 && unitIdxLower == 5) {
+                    return (WeightMethods.kg_to_Oz(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 0 && unitIdxLower == 6) {
+                    return (WeightMethods.kg_to_Gr(Double.parseDouble(input)));
+                }
+                // g
+                if (unitIdxUpper == 1 && unitIdxLower == 0) {
+                    return (WeightMethods.g_to_Kg(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 1 && unitIdxLower == 1) {
+                    return (WeightMethods.g_to_G(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 1 && unitIdxLower == 2) {
+                    return (WeightMethods.g_to_Mg(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 1 && unitIdxLower == 3) {
+                    return (WeightMethods.g_to_T(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 1 && unitIdxLower == 4) {
+                    return (WeightMethods.g_to_Lb(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 1 && unitIdxLower == 5) {
+                    return (WeightMethods.g_to_Oz(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 1 && unitIdxLower == 6) {
+                    return (WeightMethods.g_to_Gr(Double.parseDouble(input)));
+                }
+
+                // mg
+                if (unitIdxUpper == 2 && unitIdxLower == 0) {
+                    return (WeightMethods.mg_to_Kg(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 2 && unitIdxLower == 1) {
+                    return (WeightMethods.mg_to_G(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 2 && unitIdxLower == 2) {
+                    return (WeightMethods.mg_to_Mg(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 2 && unitIdxLower == 3) {
+                    return (WeightMethods.mg_to_T(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 2 && unitIdxLower == 4) {
+                    return (WeightMethods.mg_to_Lb(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 2 && unitIdxLower == 5) {
+                    return (WeightMethods.mg_to_Oz(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 2 && unitIdxLower == 6) {
+                    return (WeightMethods.mg_to_Gr(Double.parseDouble(input)));
+                }
+
+                // t
+                if (unitIdxUpper == 3 && unitIdxLower == 0) {
+                    return (WeightMethods.t_to_Kg(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 3 && unitIdxLower == 1) {
+                    return (WeightMethods.t_to_G(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 3 && unitIdxLower == 2) {
+                    return (WeightMethods.t_to_Mg(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 3 && unitIdxLower == 3) {
+                    return (WeightMethods.t_to_T(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 3 && unitIdxLower == 4) {
+                    return (WeightMethods.t_to_Lb(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 3 && unitIdxLower == 5) {
+                    return (WeightMethods.t_to_Oz(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 3 && unitIdxLower == 6) {
+                    return (WeightMethods.t_to_Gr(Double.parseDouble(input)));
+                }
+
+                // lb
+                if (unitIdxUpper == 4 && unitIdxLower == 0) {
+                    return (WeightMethods.lb_to_Kg(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 4 && unitIdxLower == 1) {
+                    return (WeightMethods.lb_to_G(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 4 && unitIdxLower == 2) {
+                    return (WeightMethods.lb_to_Mg(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 4 && unitIdxLower == 3) {
+                    return (WeightMethods.lb_to_T(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 4 && unitIdxLower == 4) {
+                    return (WeightMethods.lb_to_Lb(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 4 && unitIdxLower == 5) {
+                    return (WeightMethods.lb_to_Oz(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 4 && unitIdxLower == 6) {
+                    return (WeightMethods.lb_to_Gr(Double.parseDouble(input)));
+                }
+
+                // oz
+                if (unitIdxUpper == 5 && unitIdxLower == 0) {
+                    return (WeightMethods.oz_to_Kg(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 5 && unitIdxLower == 1) {
+                    return (WeightMethods.oz_to_G(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 5 && unitIdxLower == 2) {
+                    return (WeightMethods.oz_to_Mg(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 5 && unitIdxLower == 3) {
+                    return (WeightMethods.oz_to_T(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 5 && unitIdxLower == 4) {
+                    return (WeightMethods.oz_to_Lb(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 5 && unitIdxLower == 5) {
+                    return (WeightMethods.oz_to_Oz(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 5 && unitIdxLower == 6) {
+                    return (WeightMethods.oz_to_Gr(Double.parseDouble(input)));
+                }
+
+                // gr
+                if (unitIdxUpper == 5 && unitIdxLower == 0) {
+                    return (WeightMethods.gr_to_Kg(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 5 && unitIdxLower == 1) {
+                    return (WeightMethods.gr_to_G(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 5 && unitIdxLower == 2) {
+                    return (WeightMethods.gr_to_Mg(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 5 && unitIdxLower == 3) {
+                    return (WeightMethods.gr_to_T(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 5 && unitIdxLower == 4) {
+                    return (WeightMethods.gr_to_Lb(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 5 && unitIdxLower == 5) {
+                    return (WeightMethods.gr_to_Oz(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 5 && unitIdxLower == 6) {
+                    return (WeightMethods.gr_to_Gr(Double.parseDouble(input)));
+                }
+
+
+
+
+
+
+            }
             else if (title.equals("Speed conversion")) {
                 // kms
                 if (unitIdxUpper == 0 && unitIdxLower == 0) {
