@@ -141,7 +141,7 @@ public class PowerMethods {
     }
 
     //kcal to hp method
-    public static double kcal_to_hp(double value) {
+    public static double kcal_to_Hp(double value) {
         return value * 5.6109711297071129707056861;
     }
 
@@ -172,7 +172,7 @@ public class PowerMethods {
     }
 
     //nm/s to hp method
-    public static double nms_to_hp(double value) {
+    public static double nms_to_Hp(double value) {
         return value * 0.0013410221;
     }
 

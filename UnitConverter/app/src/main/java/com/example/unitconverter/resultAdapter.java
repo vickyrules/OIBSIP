@@ -412,7 +412,127 @@ public class resultAdapter {
 
 
             }
-            else if (title.equals("Power conversion")) {}
+            else if (title.equals("Power conversion")) {
+                //kw
+                if (unitIdxUpper == 0 && unitIdxLower == 0) {
+                    return (PowerMethods.kw_to_Kw(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 0 && unitIdxLower == 1) {
+                    return (PowerMethods.kw_to_W(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 0 && unitIdxLower == 2) {
+                    return (PowerMethods.kw_to_Js(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 0 && unitIdxLower == 3) {
+                    return (PowerMethods.kw_to_Hp(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 0 && unitIdxLower == 4) {
+                    return (PowerMethods.kw_to_Kcals(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 0 && unitIdxLower == 5) {
+                    return (PowerMethods.kw_to_Nms(Double.parseDouble(input)));
+                }
+
+                //w
+                if (unitIdxUpper == 1 && unitIdxLower == 0) {
+                    return (PowerMethods.w_to_Kw(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 1 && unitIdxLower == 1) {
+                    return (PowerMethods.w_to_W(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 1 && unitIdxLower == 2) {
+                    return (PowerMethods.w_to_Js(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 1 && unitIdxLower == 3) {
+                    return (PowerMethods.w_to_Hp(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 1 && unitIdxLower == 4) {
+                    return (PowerMethods.w_to_Kcals(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 1 && unitIdxLower == 5) {
+                    return (PowerMethods.w_to_Nms(Double.parseDouble(input)));
+                }
+
+                //j/s
+                if (unitIdxUpper == 2 && unitIdxLower == 0) {
+                    return (PowerMethods.js_to_Kw(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 2 && unitIdxLower == 1) {
+                    return (PowerMethods.js_to_W(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 2 && unitIdxLower == 2) {
+                    return (PowerMethods.js_to_Js(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 2 && unitIdxLower == 3) {
+                    return (PowerMethods.js_to_Hp(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 2 && unitIdxLower == 4) {
+                    return (PowerMethods.js_to_Kcals(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 2 && unitIdxLower == 5) {
+                    return (PowerMethods.js_to_Nms(Double.parseDouble(input)));
+                }
+
+                //hp
+                if (unitIdxUpper == 3 && unitIdxLower == 0) {
+                    return (PowerMethods.hp_to_Kw(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 3 && unitIdxLower == 1) {
+                    return (PowerMethods.hp_to_W(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 3 && unitIdxLower == 2) {
+                    return (PowerMethods.hp_to_Js(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 3 && unitIdxLower == 3) {
+                    return (PowerMethods.hp_to_Hp(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 3 && unitIdxLower == 4) {
+                    return (PowerMethods.hp_to_Kcals(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 3 && unitIdxLower == 5) {
+                    return (PowerMethods.hp_to_Nms(Double.parseDouble(input)));
+                }
+
+                //kcal/s
+                if (unitIdxUpper == 4 && unitIdxLower == 0) {
+                    return (PowerMethods.kcal_to_Kw(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 4 && unitIdxLower == 1) {
+                    return (PowerMethods.kcal_to_W(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 4 && unitIdxLower == 2) {
+                    return (PowerMethods.kcal_to_Js(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 4 && unitIdxLower == 3) {
+                    return (PowerMethods.kcal_to_Hp(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 4 && unitIdxLower == 4) {
+                    return (PowerMethods.kcal_to_Kcals(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 4 && unitIdxLower == 5) {
+                    return (PowerMethods.kcal_to_Nms(Double.parseDouble(input)));
+                }
+
+                //nm/s
+                if (unitIdxUpper == 0 && unitIdxLower == 0) {
+                    return (PowerMethods.nms_to_Kw(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 0 && unitIdxLower == 1) {
+                    return (PowerMethods.nms_to_W(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 0 && unitIdxLower == 2) {
+                    return (PowerMethods.nms_to_Js(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 0 && unitIdxLower == 3) {
+                    return (PowerMethods.nms_to_Hp(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 0 && unitIdxLower == 4) {
+                    return (PowerMethods.nms_to_Kcals(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 0 && unitIdxLower == 5) {
+                    return (PowerMethods.nms_to_Nms(Double.parseDouble(input)));
+                }
+            }
             else if (title.equals("Pressure conversion")) {
                 //atm
                 if (unitIdxUpper == 0 && unitIdxLower == 0) {
