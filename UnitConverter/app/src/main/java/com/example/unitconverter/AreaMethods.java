@@ -180,7 +180,7 @@ public class AreaMethods {
         return value  * 0.0000001;
     }
     //mm2 to ha method
-    public static double mm2_to_ha(double value) {
+    public static double mm2_to_Ha(double value) {
         return value / 10000000000.0 ;
     }
     //mm2 to Cm2 method
