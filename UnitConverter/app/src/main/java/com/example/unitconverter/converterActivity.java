@@ -24,7 +24,10 @@ import android.widget.Toast;
 
 import com.google.android.material.internal.TextWatcherAdapter;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class converterActivity extends AppCompatActivity {
     boolean doubleBackToExitPressedOnce = false;
@@ -38,7 +41,7 @@ public class converterActivity extends AppCompatActivity {
     int unitId;
     int unitIdxUpper = 0, unitIdxLower = 0;
     int textViewSelected = -1;
-    float textSize;
+
 
     String title;
     ArrayList<String> metricUnitList;
@@ -140,13 +143,15 @@ public class converterActivity extends AppCompatActivity {
                                     resultTextLower.setTextSize(32);
                                 }
 
-                                resultTextLower.setText(result + "");
+                                resultTextLower.setText(result);
+
                             }
 
                         }
 
                         @Override
                         public void afterTextChanged(Editable editable) {
+
 
                         }
                     });
@@ -244,6 +249,31 @@ public class converterActivity extends AppCompatActivity {
             }
         }, 2000);
     }
+
+//    public String stringFormat(String s){
+//
+//        try {
+//            String originalString = s.toString();
+//
+//            Long longval;
+//            if (originalString.contains(",")) {
+//                originalString = originalString.replaceAll(",", "");
+//            }
+//            longval = Long.parseLong(originalString);
+//
+//            DecimalFormat formatter = (DecimalFormat) NumberFormat.getInstance(Locale.US);
+//            formatter.applyPattern("#,###,###,###");
+//            return formatter.format(longval);
+//
+//        }
+//        catch (NumberFormatException nfe) {
+//            nfe.printStackTrace();
+//        }
+//
+//        return "";
+//    }
+//
+
 
 
 }
