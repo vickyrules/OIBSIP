@@ -67,10 +67,12 @@ public class MainActivity extends AppCompatActivity {
                 unitsListImperial.clear();
 
                 unitsListMetric.add("Square kilometer (Km\u00b2) ");
+                unitsListMetric.add("Hectare (ha) ");
                 unitsListMetric.add("Square meter (m\u00b2) ");
                 unitsListMetric.add("Square centimeter (cm\u00b2) ");
                 unitsListMetric.add("Square millimeter (mm\u00b2) ");
 
+                unitsListImperial.add("Acre (ac) ");
                 unitsListImperial.add("Square inch (in\u00b2) ");
                 unitsListImperial.add("Square mile (mi\u00b2) ");
                 unitsListImperial.add("Square foot (ft\u00b2) ");
