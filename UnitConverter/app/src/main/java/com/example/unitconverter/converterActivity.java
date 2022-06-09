@@ -186,6 +186,8 @@ public class converterActivity extends AppCompatActivity {
         intentUnitSelect.putExtra("metricUnits", metricUnitList);
         intentUnitSelect.putExtra("imperialUnits", imperialUnitList);
         startActivityForResult(intentUnitSelect, REQUEST_CODE);
+        resultTextUpper.setText("");
+        resultTextLower.setText("");
 
     }
 

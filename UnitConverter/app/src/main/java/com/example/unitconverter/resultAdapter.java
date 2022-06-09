@@ -255,7 +255,8 @@ public class resultAdapter {
                 if (unitIdxUpper == 3 && unitIdxLower == 7) {
                     result = LengthMethods.millimeter_to_Yard(Double.parseDouble(input));
                 }
-            } else if (title.equals("Temperature conversion")) {
+            }
+            else if (title.equals("Temperature conversion")) {
                 //celsius
                 if (unitIdxUpper == 0 && unitIdxLower == 0) {
                     return (TemperatureMethods.celsius_to_Celsius(Double.parseDouble(input)));
@@ -313,10 +314,11 @@ public class resultAdapter {
                     return (TemperatureMethods.fah_to_Kelvin(Double.parseDouble(input)));
                 }
 
-            } else if (title.equals("Area conversion")) {
-            } else if (title.equals("Volume conversion")) {
-            } else if (title.equals("Weight conversion")) {
-            } else if (title.equals("Speed conversion")) {
+            }
+            else if (title.equals("Area conversion")) {}
+            else if (title.equals("Volume conversion")) {}
+            else if (title.equals("Weight conversion")) {}
+            else if (title.equals("Speed conversion")) {
                 // kms
                 if (unitIdxUpper == 0 && unitIdxLower == 0) {
                     return (SpeedMethods.kms_to_Kms(Double.parseDouble(input)));
@@ -409,8 +411,173 @@ public class resultAdapter {
                 }
 
 
-            } else if (title.equals("Power conversion")) {
-            } else if (title.equals("Pressure conversion")) {
+            }
+            else if (title.equals("Power conversion")) {}
+            else if (title.equals("Pressure conversion")) {
+                //atm
+                if (unitIdxUpper == 0 && unitIdxLower == 0) {
+                    return (PressureMethods.atm_to_Atm(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 0 && unitIdxLower == 1) {
+                    return (PressureMethods.atm_to_Hpa(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 0 && unitIdxLower == 2) {
+                    return (PressureMethods.atm_to_Mpa(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 0 && unitIdxLower == 3) {
+                    return (PressureMethods.atm_to_Psf(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 0 && unitIdxLower == 4) {
+                    return (PressureMethods.atm_to_Psi(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 0 && unitIdxLower == 5) {
+                    return (PressureMethods.atm_to_MMhg(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 0 && unitIdxLower == 6) {
+                    return (PressureMethods.atm_to_Inhg(Double.parseDouble(input)));
+                }
+
+                //hpa
+
+                if (unitIdxUpper == 1 && unitIdxLower == 0) {
+                    return (PressureMethods.hpa_to_Atm(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 1 && unitIdxLower == 1) {
+                    return (PressureMethods.hpa_to_Hpa(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 1 && unitIdxLower == 2) {
+                    return (PressureMethods.hpa_to_Mpa(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 1 && unitIdxLower == 3) {
+                    return (PressureMethods.hpa_to_Psf(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 1 && unitIdxLower == 4) {
+                    return (PressureMethods.hpa_to_Psi(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 1 && unitIdxLower == 5) {
+                    return (PressureMethods.hpa_to_MMhg(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 1 && unitIdxLower == 6) {
+                    return (PressureMethods.hpa_to_Inhg(Double.parseDouble(input)));
+                }
+
+                //Mpa
+                if (unitIdxUpper == 2 && unitIdxLower == 0) {
+                    return (PressureMethods.mpa_to_Atm(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 2 && unitIdxLower == 1) {
+                    return (PressureMethods.mpa_to_Hpa(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 2 && unitIdxLower == 2) {
+                    return (PressureMethods.mpa_to_Mpa(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 2 && unitIdxLower == 3) {
+                    return (PressureMethods.mpa_to_Psf(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 2 && unitIdxLower == 4) {
+                    return (PressureMethods.mpa_to_Psi(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 2 && unitIdxLower == 5) {
+                    return (PressureMethods.mpa_to_MMhg(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 2 && unitIdxLower == 6) {
+                    return (PressureMethods.mpa_to_Inhg(Double.parseDouble(input)));
+                }
+
+                //psf
+                if (unitIdxUpper == 3 && unitIdxLower == 0) {
+                    return (PressureMethods.psf_to_Atm(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 3 && unitIdxLower == 1) {
+                    return (PressureMethods.psf_to_Hpa(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 3 && unitIdxLower == 2) {
+                    return (PressureMethods.psf_to_Mpa(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 3 && unitIdxLower == 3) {
+                    return (PressureMethods.psf_to_Psf(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 3 && unitIdxLower == 4) {
+                    return (PressureMethods.psf_to_Psi(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 3 && unitIdxLower == 5) {
+                    return (PressureMethods.psf_to_MMhg(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 3 && unitIdxLower == 6) {
+                    return (PressureMethods.psf_to_Inhg(Double.parseDouble(input)));
+                }
+
+                //psi
+                if (unitIdxUpper == 4 && unitIdxLower == 0) {
+                    return (PressureMethods.psi_to_Atm(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 4 && unitIdxLower == 1) {
+                    return (PressureMethods.psi_to_Hpa(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 4 && unitIdxLower == 2) {
+                    return (PressureMethods.psi_to_Mpa(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 4 && unitIdxLower == 3) {
+                    return (PressureMethods.psi_to_Psf(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 4 && unitIdxLower == 4) {
+                    return (PressureMethods.psi_to_Psi(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 4 && unitIdxLower == 5) {
+                    return (PressureMethods.psi_to_MMhg(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 4 && unitIdxLower == 6) {
+                    return (PressureMethods.psi_to_Inhg(Double.parseDouble(input)));
+                }
+
+                //mmhg
+                if (unitIdxUpper == 5 && unitIdxLower == 0) {
+                    return (PressureMethods.mmhg_to_Atm(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 5 && unitIdxLower == 1) {
+                    return (PressureMethods.mmhg_to_Hpa(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 5 && unitIdxLower == 2) {
+                    return (PressureMethods.mmhg_to_Mpa(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 5 && unitIdxLower == 3) {
+                    return (PressureMethods.mmhg_to_Psf(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 5 && unitIdxLower == 4) {
+                    return (PressureMethods.mmhg_to_Psi(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 5 && unitIdxLower == 5) {
+                    return (PressureMethods.mmhg_to_MMhg(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 5 && unitIdxLower == 6) {
+                    return (PressureMethods.mmhg_to_Inhg(Double.parseDouble(input)));
+                }
+
+                //inhg
+                if (unitIdxUpper == 6 && unitIdxLower == 0) {
+                    return (PressureMethods.inhg_to_Atm(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 6 && unitIdxLower == 1) {
+                    return (PressureMethods.inhg_to_Hpa(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 6 && unitIdxLower == 2) {
+                    return (PressureMethods.inhg_to_Mpa(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 6 && unitIdxLower == 3) {
+                    return (PressureMethods.inhg_to_Psf(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 6 && unitIdxLower == 4) {
+                    return (PressureMethods.inhg_to_Psi(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 6 && unitIdxLower == 5) {
+                    return (PressureMethods.inhg_to_MMhg(Double.parseDouble(input)));
+                }
+                if (unitIdxUpper == 6 && unitIdxLower == 6) {
+                    return (PressureMethods.inhg_to_Inhg(Double.parseDouble(input)));
+                }
+
+
+
             }
 
 
