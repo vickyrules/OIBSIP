@@ -647,7 +647,331 @@ public class resultAdapter {
 
                 case "Volume conversion":
 
+                    // Liter
+                    if (unitIdxUpper == 0 && unitIdxLower == 0) {
+                        return (VolumeMethods.l_to_L(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 0 && unitIdxLower == 1) {
+                        return (VolumeMethods.l_to_Ml(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 0 && unitIdxLower == 2) {
+                        return (VolumeMethods.l_to_M3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 0 && unitIdxLower == 3) {
+                        return (VolumeMethods.l_to_Cm3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 0 && unitIdxLower == 4) {
+                        return (VolumeMethods.l_to_Mm3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 0 && unitIdxLower == 5) {
+                        return (VolumeMethods.l_to_In3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 0 && unitIdxLower == 6) {
+                        return (VolumeMethods.l_to_Yd3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 0 && unitIdxLower == 7) {
+                        return (VolumeMethods.l_to_Ft3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 0 && unitIdxLower == 8) {
+                        return (VolumeMethods.l_to_Ukgal(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 0 && unitIdxLower == 9) {
+                        return (VolumeMethods.l_to_Usgal(Double.parseDouble(input)));
+                    }
+                    // ml
+                    if (unitIdxUpper == 1 && unitIdxLower == 0) {
+                        return (VolumeMethods.ml_to_L(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 1 && unitIdxLower == 1) {
+                        return (VolumeMethods.ml_to_Ml(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 1 && unitIdxLower == 2) {
+                        return (VolumeMethods.ml_to_M3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 1 && unitIdxLower == 3) {
+                        return (VolumeMethods.ml_to_Cm3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 1 && unitIdxLower == 4) {
+                        return (VolumeMethods.ml_to_Mm3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 1 && unitIdxLower == 5) {
+                        return (VolumeMethods.ml_to_In3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 1 && unitIdxLower == 6) {
+                        return (VolumeMethods.ml_to_Yd3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 1 && unitIdxLower == 7) {
+                        return (VolumeMethods.ml_to_Ft3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 1 && unitIdxLower == 8) {
+                        return (VolumeMethods.ml_to_Ukgal(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 1 && unitIdxLower == 9) {
+                        return (VolumeMethods.ml_to_Usgal(Double.parseDouble(input)));
+                    }
 
+
+                    // m3
+                    if (unitIdxUpper == 2 && unitIdxLower == 0) {
+                        return (VolumeMethods.m3_to_L(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 2 && unitIdxLower == 1) {
+                        return (VolumeMethods.m3_to_Ml(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 2 && unitIdxLower == 2) {
+                        return (VolumeMethods.m3_to_M3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 2 && unitIdxLower == 3) {
+                        return (VolumeMethods.m3_to_Cm3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 2 && unitIdxLower == 4) {
+                        return (VolumeMethods.m3_to_Mm3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 2 && unitIdxLower == 5) {
+                        return (VolumeMethods.m3_to_In3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 2 && unitIdxLower == 6) {
+                        return (VolumeMethods.m3_to_Yd3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 2 && unitIdxLower == 7) {
+                        return (VolumeMethods.m3_to_Ft3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 2 && unitIdxLower == 8) {
+                        return (VolumeMethods.m3_to_Ukgal(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 2 && unitIdxLower == 9) {
+                        return (VolumeMethods.m3_to_Usgal(Double.parseDouble(input)));
+                    }
+
+                    // cm3
+                    if (unitIdxUpper == 3 && unitIdxLower == 0) {
+                        return (VolumeMethods.cm3_to_L(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 3 && unitIdxLower == 1) {
+                        return (VolumeMethods.cm3_to_Ml(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 3 && unitIdxLower == 2) {
+                        return (VolumeMethods.cm3_to_M3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 3 && unitIdxLower == 3) {
+                        return (VolumeMethods.cm3_to_Cm3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 3 && unitIdxLower == 4) {
+                        return (VolumeMethods.cm3_to_Mm3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 3 && unitIdxLower == 5) {
+                        return (VolumeMethods.cm3_to_In3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 3 && unitIdxLower == 6) {
+                        return (VolumeMethods.cm3_to_Yd3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 3 && unitIdxLower == 7) {
+                        return (VolumeMethods.cm3_to_Ft3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 3 && unitIdxLower == 8) {
+                        return (VolumeMethods.cm3_to_Ukgal(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 3 && unitIdxLower == 9) {
+                        return (VolumeMethods.cm3_to_Usgal(Double.parseDouble(input)));
+                    }
+
+
+                    // mm3
+                    if (unitIdxUpper == 4 && unitIdxLower == 0) {
+                        return (VolumeMethods.mm3_to_L(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 4 && unitIdxLower == 1) {
+                        return (VolumeMethods.mm3_to_Ml(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 4 && unitIdxLower == 2) {
+                        return (VolumeMethods.mm3_to_M3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 4 && unitIdxLower == 3) {
+                        return (VolumeMethods.mm3_to_Cm3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 4 && unitIdxLower == 4) {
+                        return (VolumeMethods.mm3_to_Mm3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 4 && unitIdxLower == 5) {
+                        return (VolumeMethods.mm3_to_In3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 4 && unitIdxLower == 6) {
+                        return (VolumeMethods.mm3_to_Yd3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 4 && unitIdxLower == 7) {
+                        return (VolumeMethods.mm3_to_Ft3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 4 && unitIdxLower == 8) {
+                        return (VolumeMethods.mm3_to_Ukgal(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 4 && unitIdxLower == 9) {
+                        return (VolumeMethods.mm3_to_Usgal(Double.parseDouble(input)));
+                    }
+
+
+                    // in3
+                    if (unitIdxUpper == 5 && unitIdxLower == 0) {
+                        return (VolumeMethods.in3_to_L(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 5 && unitIdxLower == 1) {
+                        return (VolumeMethods.in3_to_Ml(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 5 && unitIdxLower == 2) {
+                        return (VolumeMethods.in3_to_M3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 5 && unitIdxLower == 3) {
+                        return (VolumeMethods.in3_to_Cm3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 5 && unitIdxLower == 4) {
+                        return (VolumeMethods.in3_to_Mm3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 5 && unitIdxLower == 5) {
+                        return (VolumeMethods.in3_to_In3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 5  && unitIdxLower == 6) {
+                        return (VolumeMethods.in3_to_Yd3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 5 && unitIdxLower == 7) {
+                        return (VolumeMethods.in3_to_Ft3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 5 && unitIdxLower == 8) {
+                        return (VolumeMethods.in3_to_Ukgal(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 5 && unitIdxLower == 9) {
+                        return (VolumeMethods.in3_to_Usgal(Double.parseDouble(input)));
+                    }
+
+
+                    // yd3
+                    if (unitIdxUpper == 6 && unitIdxLower == 0) {
+                        return (VolumeMethods.yd3_to_L(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 6 && unitIdxLower == 1) {
+                        return (VolumeMethods.yd3_to_Ml(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 6 && unitIdxLower == 2) {
+                        return (VolumeMethods.yd3_to_M3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 6 && unitIdxLower == 3) {
+                        return (VolumeMethods.yd3_to_Cm3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 6 && unitIdxLower == 4) {
+                        return (VolumeMethods.yd3_to_Mm3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 6 && unitIdxLower == 5) {
+                        return (VolumeMethods.yd3_to_In3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 6 && unitIdxLower == 6) {
+                        return (VolumeMethods.yd3_to_Yd3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 6 && unitIdxLower == 7) {
+                        return (VolumeMethods.yd3_to_Ft3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 6 && unitIdxLower == 8) {
+                        return (VolumeMethods.yd3_to_Ukgal(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 6 && unitIdxLower == 9) {
+                        return (VolumeMethods.yd3_to_Usgal(Double.parseDouble(input)));
+                    }
+
+
+                    // ft3
+                    if (unitIdxUpper == 7 && unitIdxLower == 0) {
+                        return (VolumeMethods.ft3_to_L(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 7 && unitIdxLower == 1) {
+                        return (VolumeMethods.ft3_to_Ml(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 7 && unitIdxLower == 2) {
+                        return (VolumeMethods.ft3_to_M3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 7 && unitIdxLower == 3) {
+                        return (VolumeMethods.ft3_to_Cm3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 7 && unitIdxLower == 4) {
+                        return (VolumeMethods.ft3_to_Mm3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 7 && unitIdxLower == 5) {
+                        return (VolumeMethods.ft3_to_In3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 7 && unitIdxLower == 6) {
+                        return (VolumeMethods.ft3_to_Yd3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 7 && unitIdxLower == 7) {
+                        return (VolumeMethods.ft3_to_Ft3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 7 && unitIdxLower == 8) {
+                        return (VolumeMethods.ft3_to_Ukgal(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 7 && unitIdxLower == 9) {
+                        return (VolumeMethods.ft3_to_Usgal(Double.parseDouble(input)));
+                    }
+
+
+                    // ukgal
+                    if (unitIdxUpper == 8 && unitIdxLower == 0) {
+                        return (VolumeMethods.ukgal_to_L(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 8 && unitIdxLower == 1) {
+                        return (VolumeMethods.ukgal_to_Ml(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 8 && unitIdxLower == 2) {
+                        return (VolumeMethods.ukgal_to_M3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 8 && unitIdxLower == 3) {
+                        return (VolumeMethods.ukgal_to_Cm3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 8 && unitIdxLower == 4) {
+                        return (VolumeMethods.ukgal_to_Mm3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 8 && unitIdxLower == 5) {
+                        return (VolumeMethods.ukgal_to_In3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 8 && unitIdxLower == 6) {
+                        return (VolumeMethods.ukgal_to_Yd3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 8 && unitIdxLower == 7) {
+                        return (VolumeMethods.ukgal_to_Ft3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 8 && unitIdxLower == 8) {
+                        return (VolumeMethods.ukgal_to_Ukgal(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 8 && unitIdxLower == 9) {
+                        return (VolumeMethods.ukgal_to_Usgal(Double.parseDouble(input)));
+                    }
+
+
+                    // usgak
+                    if (unitIdxUpper == 9 && unitIdxLower == 0) {
+                        return (VolumeMethods.usgal_to_L(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 9 && unitIdxLower == 1) {
+                        return (VolumeMethods.usgal_to_Ml(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 9 && unitIdxLower == 2) {
+                        return (VolumeMethods.usgal_to_M3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 9 && unitIdxLower == 3) {
+                        return (VolumeMethods.usgal_to_Cm3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 9 && unitIdxLower == 4) {
+                        return (VolumeMethods.usgal_to_Mm3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 9 && unitIdxLower == 5) {
+                        return (VolumeMethods.usgal_to_In3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 9 && unitIdxLower == 6) {
+                        return (VolumeMethods.usgal_to_Yd3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 9 && unitIdxLower == 7) {
+                        return (VolumeMethods.usgal_to_Ft3(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 9 && unitIdxLower == 8) {
+                        return (VolumeMethods.usgal_to_Ukgal(Double.parseDouble(input)));
+                    }
+                    if (unitIdxUpper == 9 && unitIdxLower == 9) {
+                        return (VolumeMethods.usgal_to_Usgal(Double.parseDouble(input)));
+                    }
 
 
 
