@@ -171,7 +171,7 @@ public class MainActivity extends AppCompatActivity {
                 unitsListMetric.add("Joule/second(J/s) ");
                 unitsListMetric.add("Horsepower (hp) ");
                 unitsListMetric.add("Kilocalorie/second (kcal/s) ");
-                unitsListMetric.add("Newton-meter/second (N-m/s) ");
+                unitsListMetric.add("Newton-meter/second (N.m/s) ");
 
 
                 startConversion("Power conversion");
