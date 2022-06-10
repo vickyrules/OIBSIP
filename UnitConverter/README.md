@@ -1,7 +1,7 @@
 # Project-1
 ## Unit Converter App
 
-### Quick ,free unit converter (with 50+ units) that converts common units of measurement.
+Quick, free unit converter (with 50+ units) that converts common units of measurement.
 
 
 ## Download apk (click on the android emoji):
