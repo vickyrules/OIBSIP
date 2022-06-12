@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+     >
+
+        <NumberPicker
+            android:id="@+id/hrs"
+            style="@style/numberPickerStyle"
+            android:selectionDividerHeight="0dp"
+
+            />
+
+        <TextView
+            style="@style/textViewStyle"
+            android:text="hrs"
+            />
+
+        <NumberPicker
+            android:id="@+id/min"
+            style="@style/numberPickerStyle"
+            android:selectionDividerHeight="0dp"
+            />
+        <TextView
+            style="@style/textViewStyle"
+            android:text="min"
+            />
+        <NumberPicker
+            android:id="@+id/sec"
+            style="@style/numberPickerStyle"
+            android:selectionDividerHeight="0dp"
+            />
+        <TextView
+            style="@style/textViewStyle"
+            android:text="sec"
+            />
+
+        <NumberPicker
+            android:visibility="gone"
+            android:id="@+id/millisec"
+            style="@style/numberPickerStyle"
+            android:layout_weight="1.1"
+            android:selectionDividerHeight="0dp"
+            />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

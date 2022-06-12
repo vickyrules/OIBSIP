@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="numberPickerStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:focusable">false</item>
+        <item name="android:clickable">false</item>
+        <item name="android:scrollbars">none</item>
+        <item name="android:descendantFocusability">blocksDescendants</item>
+
+    </style>
+
+    <style name="textViewStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">0</item>
+        <item name="android:gravity">center|left</item>
+    </style>
+
+
+    <style name="Circular">
+        <item name="cornerSize">50%</item>
+    </style>
+
+
+
+
+</resources>
