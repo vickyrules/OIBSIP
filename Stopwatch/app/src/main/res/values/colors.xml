@@ -9,4 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="grey">#A39F9F</color>
     <color name="white_window">#F5EEEE</color>
+    <color name="button_active">#FF1744</color>
+    <color name="button_inative">#FADFE8</color>
+    <color name="button_inativeDark">#400612</color>
 </resources>

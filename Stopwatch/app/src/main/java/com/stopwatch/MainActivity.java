@@ -24,6 +24,8 @@ import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.button.MaterialButton;
+
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.text.DecimalFormat;
@@ -32,11 +34,14 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     NumberPicker hrs,min,sec,millisec;
-    // on the stopwatch.
+    MaterialButton start,pause,resume,reset,lap;
+    LinearLayout reset_resume_lay,lap_pause_lay;
+    // on the stopwatch
     private int seconds = 0;
 
     // Is the stopwatch running?
     private boolean running;
+
 
     private boolean wasRunning;
 
@@ -50,6 +55,17 @@ public class MainActivity extends AppCompatActivity {
         min = (NumberPicker) findViewById(R.id.min);
         sec = (NumberPicker) findViewById(R.id.sec);
         millisec = (NumberPicker) findViewById(R.id.millisec);
+
+        start = (MaterialButton) findViewById(R.id.start);
+        lap = (MaterialButton) findViewById(R.id.lap);
+        pause = (MaterialButton) findViewById(R.id.pause);
+        reset = (MaterialButton) findViewById(R.id.reset);
+        resume = (MaterialButton) findViewById(R.id.resume);
+        reset_resume_lay = (LinearLayout) findViewById(R.id.reset_resume_layout);
+        lap_pause_lay = (LinearLayout) findViewById(R.id.lap_pause_layout);
+
+
+
 
 
         if (savedInstanceState != null) {
@@ -76,6 +92,13 @@ public class MainActivity extends AppCompatActivity {
         //setPickerStyle(millisec);
         //millisec.setTextSize(70);
         hrs.setMaxValue(23);
+
+
+        setButtonAnimation(start);
+        setButtonAnimation(lap);
+        setButtonAnimation(pause);
+        setButtonAnimation(resume);
+        setButtonAnimation(reset);
 
         runTimer();
 
@@ -104,7 +127,32 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+  private void  setButtonAnimation(MaterialButton button){
 
+      button.setOnTouchListener(new View.OnTouchListener() {
+          @Override
+          public boolean onTouch(View v, MotionEvent event) {
+
+              int action = event.getAction();
+              if (action == MotionEvent.ACTION_DOWN) {
+                  v.animate().scaleXBy(-0.08f).setDuration(150).start();
+                  v.animate().scaleYBy(-0.08f).setDuration(150).start();
+                  return true;
+
+              }
+
+              else if (action == MotionEvent.ACTION_UP) {
+                  v.animate().cancel();
+                  v.animate().scaleX(1f).setDuration(200).start();
+                  v.animate().scaleY(1f).setDuration(200).start();
+                  return true;
+              }
+
+              return false;
+          }
+      });
+
+  }
 
 
 
@@ -275,5 +323,6 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
 
 }
