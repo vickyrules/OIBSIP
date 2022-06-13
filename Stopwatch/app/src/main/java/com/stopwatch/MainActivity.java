@@ -4,18 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
-import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.Html;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -23,7 +18,6 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.NumberPicker;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
@@ -36,28 +30,21 @@ import java.text.NumberFormat;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
-    NumberPicker hrs,min,sec,millisec;
-    MaterialButton start,pause,resume,reset,lap;
-    LinearLayout reset_resume_lay,lap_pause_lay;
+    NumberPicker hrs, min, sec, millisec;
+    MaterialButton start, pause, resume, reset, lap;
+    LinearLayout reset_resume_lay, lap_pause_lay;
     FrameLayout lapFrame;
     // on the stopwatch
     // Creates a new Handler
-
-
-    private int seconds = 0;
-
-    // Is the stopwatch running?
-    private boolean running;
-
-    private boolean stopped;
-
-
-    private boolean wasRunning;
-
     int valhrsLst = 0;
     int valminLst = 0;
     int valsecLst = 0;
     int valmillisecLSt = 0;
+    private int seconds = 0;
+    // Is the stopwatch running?
+    private boolean running;
+    private boolean stopped;
+    private boolean wasRunning;
 
     @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
@@ -105,15 +92,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-
         setPickerStyle(hrs);
         setPickerStyle(sec);
         setPickerStyle(min);
         setPickerStyle(millisec);
-        millisec.setTextSize(70);
+        millisec.setTextSize(65);
         millisec.setMaxValue(99);
         hrs.setMaxValue(23);
-
 
 
         start.setOnTouchListener(new View.OnTouchListener() {
@@ -126,9 +111,7 @@ public class MainActivity extends AppCompatActivity {
                     v.animate().scaleYBy(-0.08f).setDuration(150).start();
                     return true;
 
-                }
-
-                else if (action == MotionEvent.ACTION_UP) {
+                } else if (action == MotionEvent.ACTION_UP) {
                     v.animate().cancel();
                     v.animate().scaleX(1f).setDuration(200).start();
                     v.animate().scaleY(1f).setDuration(200).start();
@@ -153,9 +136,7 @@ public class MainActivity extends AppCompatActivity {
                     v.animate().scaleYBy(-0.08f).setDuration(150).start();
                     return true;
 
-                }
-
-                else if (action == MotionEvent.ACTION_UP) {
+                } else if (action == MotionEvent.ACTION_UP) {
                     v.animate().cancel();
                     v.animate().scaleX(1f).setDuration(200).start();
                     v.animate().scaleY(1f).setDuration(200).start();
@@ -179,9 +160,7 @@ public class MainActivity extends AppCompatActivity {
                     v.animate().scaleYBy(-0.08f).setDuration(150).start();
                     return true;
 
-                }
-
-                else if (action == MotionEvent.ACTION_UP) {
+                } else if (action == MotionEvent.ACTION_UP) {
                     v.animate().cancel();
                     v.animate().scaleX(1f).setDuration(200).start();
                     v.animate().scaleY(1f).setDuration(200).start();
@@ -205,9 +184,7 @@ public class MainActivity extends AppCompatActivity {
                     v.animate().scaleYBy(-0.08f).setDuration(150).start();
                     return true;
 
-                }
-
-                else if (action == MotionEvent.ACTION_UP) {
+                } else if (action == MotionEvent.ACTION_UP) {
                     v.animate().cancel();
                     v.animate().scaleX(1f).setDuration(200).start();
                     v.animate().scaleY(1f).setDuration(200).start();
@@ -240,9 +217,7 @@ public class MainActivity extends AppCompatActivity {
                     v.animate().scaleYBy(-0.08f).setDuration(150).start();
                     return true;
 
-                }
-
-                else if (action == MotionEvent.ACTION_UP) {
+                } else if (action == MotionEvent.ACTION_UP) {
                     v.animate().cancel();
                     v.animate().scaleX(1f).setDuration(200).start();
                     v.animate().scaleY(1f).setDuration(200).start();
@@ -250,24 +225,23 @@ public class MainActivity extends AppCompatActivity {
                     NumberFormat mformat = new DecimalFormat("00");
 
 
-
                     int valhrs = hrs.getValue();
                     int valmin = min.getValue();
                     int valsec = sec.getValue();
                     int valmillisec = millisec.getValue();
 
-                    valhrsLst = Math.abs( valhrs - valhrsLst);
-                    valminLst= Math.abs(valmin - valminLst );
+                    valhrsLst = Math.abs(valhrs - valhrsLst);
+                    valminLst = Math.abs(valmin - valminLst);
                     valsecLst = Math.abs(valsec - valsecLst);
                     valmillisecLSt = Math.abs(valmillisec - valmillisecLSt);
 
-                    String time = mformat.format(valhrs)+":"+mformat.format(valmin)
-                            +":"+mformat.format(valsec)+"."+mformat.format(valmillisec);
+                    String time = mformat.format(valhrs) + ":" + mformat.format(valmin)
+                            + ":" + mformat.format(valsec) + "." + mformat.format(valmillisec);
 
-                    String timeDiff ="+" +mformat.format(valhrsLst)+":"+ mformat.format(valminLst)+
-                            ":"+mformat.format(valsecLst) +"."+mformat.format(valmillisecLSt);
+                    String timeDiff = "+" + mformat.format(valhrsLst) + ":" + mformat.format(valminLst) +
+                            ":" + mformat.format(valsecLst) + "." + mformat.format(valmillisecLSt);
 
-                    PlaceholderContent.ITEMS.add(0,new PlaceholderContent.PlaceholderItem(mformat.format(PlaceholderContent.ITEMS.size())+"", time+"",timeDiff+""));
+                    PlaceholderContent.ITEMS.add(0, new PlaceholderContent.PlaceholderItem(mformat.format(PlaceholderContent.ITEMS.size()) + "", time + "", timeDiff + ""));
                     beginTransition();
 
                     return true;
@@ -279,30 +253,39 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @SuppressLint("NewApi")
-    private void setPickerStyle(NumberPicker numberPicker) {
-        numberPicker.setTextSize(210);
-        numberPicker.setMinValue(0);
-        numberPicker.setMaxValue(59);
-        numberPicker.setMaxValue(59);
-        numberPicker.setClickable(false);
-        numberPicker.setNestedScrollingEnabled(false);
-        numberPicker.setEnabled(false);
 
-        numberPicker.setFormatter(new NumberPicker.Formatter() {
-            @Override
-            public String format(int value) {
-                NumberFormat numberFormat = new DecimalFormat("00");
-                return numberFormat.format(value);
-            }
-        });
+
+    @RequiresApi(api = Build.VERSION_CODES.Q)
+    private void setPickerStyle(NumberPicker numberPicker) {
+        try {
+            numberPicker.setTextSize(170f);
+            numberPicker.setMinValue(0);
+            numberPicker.setMaxValue(59);
+            numberPicker.setMaxValue(59);
+            numberPicker.setClickable(false);
+            numberPicker.setNestedScrollingEnabled(false);
+            numberPicker.setEnabled(false);
+
+
+            numberPicker.setFormatter(new NumberPicker.Formatter() {
+                @Override
+                public String format(int value) {
+                    NumberFormat numberFormat = new DecimalFormat("00");
+                    return numberFormat.format(value);
+                }
+            });
+
+        }
+        catch (Exception e){
+
+        }
 
     }
 
-    private  void beginTransition(){
+    private void beginTransition() {
 
-        FragmentTransaction Profile= getSupportFragmentManager().beginTransaction();
-        Profile.replace(R.id.lapframe,new LapFragment());
+        FragmentTransaction Profile = getSupportFragmentManager().beginTransaction();
+        Profile.replace(R.id.lapframe, new LapFragment());
         Profile.commitAllowingStateLoss();
 
 
@@ -336,7 +319,6 @@ public class MainActivity extends AppCompatActivity {
 //  }
 
 
-
     // Save the state of the stopwatch
     // if it's about to be destroyed.
     @Override
@@ -356,8 +338,7 @@ public class MainActivity extends AppCompatActivity {
     // If the activity is paused,
     // stop the stopwatch.
     @Override
-    protected void onPause()
-    {
+    protected void onPause() {
         super.onPause();
         wasRunning = running;
         running = false;
@@ -375,8 +356,7 @@ public class MainActivity extends AppCompatActivity {
     // start the stopwatch
     // again if it was running previously.
     @Override
-    protected void onResume()
-    {
+    protected void onResume() {
         super.onResume();
         if (wasRunning) {
             running = true;
@@ -384,14 +364,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     // Sets the NUmber of seconds on the timer.
     // The runTimer() method uses a Handler
     // to increment the seconds and
     // update the text view.
-    private void runTimer()
-    {
-
+    private void runTimer() {
 
 
         // Call the post() method,
@@ -404,8 +381,7 @@ public class MainActivity extends AppCompatActivity {
         handler.post(new Runnable() {
             @Override
 
-            public void run()
-            {
+            public void run() {
                 int hours = seconds / 3600;
                 int minutes = (seconds % 3600) / 60;
                 int secs = seconds % 60;
@@ -419,12 +395,12 @@ public class MainActivity extends AppCompatActivity {
                 // seconds variable.
                 if (running) {
                     seconds++;
-                    changeValueByOne(sec,true);
-                    if(seconds% 60 == 0 && seconds != 0 ){
-                        changeValueByOne(min,true);
+                    changeValueByOne(sec, true);
+                    if (seconds % 60 == 0 && seconds != 0) {
+                        changeValueByOne(min, true);
                     }
-                    if(seconds % 3600 == 0 && seconds != 0){
-                        changeValueByOne(hrs,true);
+                    if (seconds % 3600 == 0 && seconds != 0) {
+                        changeValueByOne(hrs, true);
                     }
 
                 }
@@ -432,12 +408,11 @@ public class MainActivity extends AppCompatActivity {
 
                 // Post the code again
                 // with a delay of 1 second.
-                if(stopped){
+                if (stopped) {
                     handler.removeCallbacks(this);
+                } else {
+                    handler.postDelayed(this, 1000);
                 }
-
-                else{
-                handler.postDelayed( this, 1000);}
 
 
             }
@@ -446,15 +421,14 @@ public class MainActivity extends AppCompatActivity {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                if(running){
-                    changeValueByOne(millisec,true);
+                if (running) {
+                    changeValueByOne(millisec, true);
                 }
-                if(stopped){
+                if (stopped) {
                     handler.removeCallbacks(this);
+                } else {
+                    handler.postDelayed(this, 10);
                 }
-
-                else{
-                    handler.postDelayed( this, 10);}
 
             }
         });
@@ -474,13 +448,7 @@ public class MainActivity extends AppCompatActivity {
             method.setAccessible(true);
             method.invoke(higherPicker, increment);
 
-        } catch (final NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (final IllegalArgumentException e) {
-            e.printStackTrace();
-        } catch (final IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (final InvocationTargetException e) {
+        } catch (final NoSuchMethodException | IllegalArgumentException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
     }

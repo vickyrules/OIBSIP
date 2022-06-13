@@ -38,10 +38,11 @@
 
 
         <NumberPicker
+            android:layout_marginTop="5dp"
             android:visibility="visible"
             android:id="@+id/millisec"
             style="@style/numberPickerStyle"
-            android:layout_weight="1.1"
+            android:layout_weight="1.2"
             android:selectionDividerHeight="0dp"
             />
     </LinearLayout>
