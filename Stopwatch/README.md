@@ -27,9 +27,9 @@ Dark themed, easy to use and accurate stopwatch with lap times.
 
  
  
-## Vid
+## Video
 
 https://user-images.githubusercontent.com/73611313/173352100-ffe16d23-4c95-46c4-ac71-c8fc143d6878.mp4
 
-eo
+
 
