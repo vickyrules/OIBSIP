@@ -11,7 +11,7 @@ Dark themed, easy to use and accurate stopwatch with lap times.
 </a>
 
 
- (click on the android emoji to Download the apk)
+ (click on the above icon to Download the apk)
  
  ## Screenshots
 
