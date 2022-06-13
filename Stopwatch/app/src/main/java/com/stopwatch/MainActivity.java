@@ -3,7 +3,9 @@ package com.stopwatch;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
@@ -25,6 +27,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
+import com.stopwatch.placeholder.PlaceholderContent;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -36,20 +39,35 @@ public class MainActivity extends AppCompatActivity {
     NumberPicker hrs,min,sec,millisec;
     MaterialButton start,pause,resume,reset,lap;
     LinearLayout reset_resume_lay,lap_pause_lay;
+    FrameLayout lapFrame;
     // on the stopwatch
+    // Creates a new Handler
+
+
     private int seconds = 0;
 
     // Is the stopwatch running?
     private boolean running;
 
+    private boolean stopped;
+
 
     private boolean wasRunning;
+
+    int valhrsLst = 0;
+    int valminLst = 0;
+    int valsecLst = 0;
+    int valmillisecLSt = 0;
 
     @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        PlaceholderContent.ITEMS.clear();
+
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+
 
         hrs = (NumberPicker) findViewById(R.id.hrs);
         min = (NumberPicker) findViewById(R.id.min);
@@ -63,9 +81,7 @@ public class MainActivity extends AppCompatActivity {
         resume = (MaterialButton) findViewById(R.id.resume);
         reset_resume_lay = (LinearLayout) findViewById(R.id.reset_resume_layout);
         lap_pause_lay = (LinearLayout) findViewById(R.id.lap_pause_layout);
-
-
-
+        lapFrame = (FrameLayout) findViewById(R.id.lapframe);
 
 
         if (savedInstanceState != null) {
@@ -82,6 +98,10 @@ public class MainActivity extends AppCompatActivity {
             wasRunning
                     = savedInstanceState
                     .getBoolean("wasRunning");
+
+            stopped
+                    = savedInstanceState
+                    .getBoolean("stopped");
         }
 
 
@@ -89,20 +109,172 @@ public class MainActivity extends AppCompatActivity {
         setPickerStyle(hrs);
         setPickerStyle(sec);
         setPickerStyle(min);
-        //setPickerStyle(millisec);
-        //millisec.setTextSize(70);
+        setPickerStyle(millisec);
+        millisec.setTextSize(70);
+        millisec.setMaxValue(99);
         hrs.setMaxValue(23);
 
 
-        setButtonAnimation(start);
-        setButtonAnimation(lap);
-        setButtonAnimation(pause);
-        setButtonAnimation(resume);
-        setButtonAnimation(reset);
 
-        runTimer();
+        start.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                int action = event.getAction();
+                if (action == MotionEvent.ACTION_DOWN) {
+                    v.animate().scaleXBy(-0.08f).setDuration(150).start();
+                    v.animate().scaleYBy(-0.08f).setDuration(150).start();
+                    return true;
+
+                }
+
+                else if (action == MotionEvent.ACTION_UP) {
+                    v.animate().cancel();
+                    v.animate().scaleX(1f).setDuration(200).start();
+                    v.animate().scaleY(1f).setDuration(200).start();
+                    start.setVisibility(View.GONE);
+                    lap_pause_lay.setVisibility(View.VISIBLE);
+                    running = true;
+                    stopped = false;
+                    runTimer();
+                    return true;
+                }
+                return false;
+            }
+        });
+
+        pause.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                int action = event.getAction();
+                if (action == MotionEvent.ACTION_DOWN) {
+                    v.animate().scaleXBy(-0.08f).setDuration(150).start();
+                    v.animate().scaleYBy(-0.08f).setDuration(150).start();
+                    return true;
+
+                }
+
+                else if (action == MotionEvent.ACTION_UP) {
+                    v.animate().cancel();
+                    v.animate().scaleX(1f).setDuration(200).start();
+                    v.animate().scaleY(1f).setDuration(200).start();
+
+                    lap_pause_lay.setVisibility(View.GONE);
+                    reset_resume_lay.setVisibility(View.VISIBLE);
+                    onPause();
+                    return true;
+                }
+                return false;
+            }
+        });
+
+        resume.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                int action = event.getAction();
+                if (action == MotionEvent.ACTION_DOWN) {
+                    v.animate().scaleXBy(-0.08f).setDuration(150).start();
+                    v.animate().scaleYBy(-0.08f).setDuration(150).start();
+                    return true;
+
+                }
+
+                else if (action == MotionEvent.ACTION_UP) {
+                    v.animate().cancel();
+                    v.animate().scaleX(1f).setDuration(200).start();
+                    v.animate().scaleY(1f).setDuration(200).start();
+
+                    lap_pause_lay.setVisibility(View.VISIBLE);
+                    reset_resume_lay.setVisibility(View.GONE);
+                    onResume();
+                    return true;
+                }
+                return false;
+            }
+        });
+
+        reset.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                int action = event.getAction();
+                if (action == MotionEvent.ACTION_DOWN) {
+                    v.animate().scaleXBy(-0.08f).setDuration(150).start();
+                    v.animate().scaleYBy(-0.08f).setDuration(150).start();
+                    return true;
+
+                }
+
+                else if (action == MotionEvent.ACTION_UP) {
+                    v.animate().cancel();
+                    v.animate().scaleX(1f).setDuration(200).start();
+                    v.animate().scaleY(1f).setDuration(200).start();
+                    reset_resume_lay.setVisibility(View.GONE);
+                    start.setVisibility(View.VISIBLE);
+                    running = false;
+                    wasRunning = false;
+                    seconds = 0;
+                    sec.setValue(0);
+                    hrs.setValue(0);
+                    min.setValue(0);
+                    millisec.setValue(0);
+                    PlaceholderContent.ITEMS.clear();
+                    beginTransition();
+                    onStop();
+                    return true;
+                }
+                return false;
+            }
+        });
 
 
+        lap.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                int action = event.getAction();
+                if (action == MotionEvent.ACTION_DOWN) {
+                    v.animate().scaleXBy(-0.08f).setDuration(150).start();
+                    v.animate().scaleYBy(-0.08f).setDuration(150).start();
+                    return true;
+
+                }
+
+                else if (action == MotionEvent.ACTION_UP) {
+                    v.animate().cancel();
+                    v.animate().scaleX(1f).setDuration(200).start();
+                    v.animate().scaleY(1f).setDuration(200).start();
+                    beginTransition();
+                    NumberFormat mformat = new DecimalFormat("00");
+
+
+
+                    int valhrs = hrs.getValue();
+                    int valmin = min.getValue();
+                    int valsec = sec.getValue();
+                    int valmillisec = millisec.getValue();
+
+                    valhrsLst = Math.abs( valhrs - valhrsLst);
+                    valminLst= Math.abs(valmin - valminLst );
+                    valsecLst = Math.abs(valsec - valsecLst);
+                    valmillisecLSt = Math.abs(valmillisec - valmillisecLSt);
+
+                    String time = mformat.format(valhrs)+":"+mformat.format(valmin)
+                            +":"+mformat.format(valsec)+"."+mformat.format(valmillisec);
+
+                    String timeDiff ="+" +mformat.format(valhrsLst)+":"+ mformat.format(valminLst)+
+                            ":"+mformat.format(valsecLst) +"."+mformat.format(valmillisecLSt);
+
+                    PlaceholderContent.ITEMS.add(0,new PlaceholderContent.PlaceholderItem(mformat.format(PlaceholderContent.ITEMS.size())+"", time+"",timeDiff+""));
+                    beginTransition();
+
+                    return true;
+                }
+                return false;
+            }
+        });
 
 
     }
@@ -127,32 +299,41 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-  private void  setButtonAnimation(MaterialButton button){
+    private  void beginTransition(){
 
-      button.setOnTouchListener(new View.OnTouchListener() {
-          @Override
-          public boolean onTouch(View v, MotionEvent event) {
+        FragmentTransaction Profile= getSupportFragmentManager().beginTransaction();
+        Profile.replace(R.id.lapframe,new LapFragment());
+        Profile.commitAllowingStateLoss();
 
-              int action = event.getAction();
-              if (action == MotionEvent.ACTION_DOWN) {
-                  v.animate().scaleXBy(-0.08f).setDuration(150).start();
-                  v.animate().scaleYBy(-0.08f).setDuration(150).start();
-                  return true;
 
-              }
+    }
 
-              else if (action == MotionEvent.ACTION_UP) {
-                  v.animate().cancel();
-                  v.animate().scaleX(1f).setDuration(200).start();
-                  v.animate().scaleY(1f).setDuration(200).start();
-                  return true;
-              }
-
-              return false;
-          }
-      });
-
-  }
+//  private void  setButtonAnimation(MaterialButton button){
+//
+//      button.setOnTouchListener(new View.OnTouchListener() {
+//          @Override
+//          public boolean onTouch(View v, MotionEvent event) {
+//
+//              int action = event.getAction();
+//              if (action == MotionEvent.ACTION_DOWN) {
+//                  v.animate().scaleXBy(-0.08f).setDuration(150).start();
+//                  v.animate().scaleYBy(-0.08f).setDuration(150).start();
+//                  return true;
+//
+//              }
+//
+//              else if (action == MotionEvent.ACTION_UP) {
+//                  v.animate().cancel();
+//                  v.animate().scaleX(1f).setDuration(200).start();
+//                  v.animate().scaleY(1f).setDuration(200).start();
+//                  return true;
+//              }
+//
+//              return false;
+//          }
+//      });
+//
+//  }
 
 
 
@@ -168,6 +349,8 @@ public class MainActivity extends AppCompatActivity {
                 .putBoolean("running", running);
         savedInstanceState
                 .putBoolean("wasRunning", wasRunning);
+        savedInstanceState
+                .putBoolean("stopped", stopped);
     }
 
     // If the activity is paused,
@@ -178,6 +361,14 @@ public class MainActivity extends AppCompatActivity {
         super.onPause();
         wasRunning = running;
         running = false;
+        stopped = false;
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        stopped = true;
+
     }
 
     // If the activity is resumed,
@@ -192,33 +383,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    // Start the stopwatch running
-    // when the Start button is clicked.
-    // Below method gets called
-    // when the Start button is clicked.
-    public void onClickStart(View view)
-    {
-        running = true;
-    }
 
-    // Stop the stopwatch running
-    // when the Stop button is clicked.
-    // Below method gets called
-    // when the Stop button is clicked.
-    public void onClickStop(View view)
-    {
-        running = false;
-    }
-
-    // Reset the stopwatch when
-    // the Reset button is clicked.
-    // Below method gets called
-    // when the Reset button is clicked.
-    public void onClickReset(View view)
-    {
-        running = false;
-        seconds = 0;
-    }
 
     // Sets the NUmber of seconds on the timer.
     // The runTimer() method uses a Handler
@@ -228,9 +393,6 @@ public class MainActivity extends AppCompatActivity {
     {
 
 
-        // Creates a new Handler
-        final Handler handler
-                = new Handler();
 
         // Call the post() method,
         // passing in a new Runnable.
@@ -238,6 +400,7 @@ public class MainActivity extends AppCompatActivity {
         // code without a delay,
         // so the code in the Runnable
         // will run almost immediately.
+        Handler handler = new Handler();
         handler.post(new Runnable() {
             @Override
 
@@ -247,34 +410,56 @@ public class MainActivity extends AppCompatActivity {
                 int minutes = (seconds % 3600) / 60;
                 int secs = seconds % 60;
 
+
                 // Format the seconds into hours, minutes,
                 // and seconds.
 
 
-                changeValueByOne(sec,true);
-
-                Log.v("secs" ,seconds+"");
-                if(seconds % 60 == 0){
-                    changeValueByOne(min,true);
-                }
-                if(seconds % 3600 == 0){
-                    changeValueByOne(hrs,true);
-                }
-
-                System.out.println(seconds+"");
-
                 // If running is true, increment the
                 // seconds variable.
                 if (running) {
+                    seconds++;
+                    changeValueByOne(sec,true);
+                    if(seconds% 60 == 0 && seconds != 0 ){
+                        changeValueByOne(min,true);
+                    }
+                    if(seconds % 3600 == 0 && seconds != 0){
+                        changeValueByOne(hrs,true);
+                    }
 
                 }
-                seconds++;
+
 
                 // Post the code again
                 // with a delay of 1 second.
-                handler.postDelayed(this, 1000);
+                if(stopped){
+                    handler.removeCallbacks(this);
+                }
+
+                else{
+                handler.postDelayed( this, 1000);}
+
+
             }
         });
+
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                if(running){
+                    changeValueByOne(millisec,true);
+                }
+                if(stopped){
+                    handler.removeCallbacks(this);
+                }
+
+                else{
+                    handler.postDelayed( this, 10);}
+
+            }
+        });
+
+
     }
 
 
@@ -309,13 +494,15 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+
         switch (item.getItemId()) {
+
             case R.id.About:
 
                 Intent intent = new Intent(getApplicationContext(), AboutActivity.class);
                 startActivity(intent);
                 return true;
-
             case R.id.Version:
                 Toast.makeText(this, "Version 1.0.0", Toast.LENGTH_SHORT).show();
                 return true;

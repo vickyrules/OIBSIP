@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:title="@string/about"
         android:id="@+id/About"
         android:orderInCategory="0"
         />
+
     <item
         android:id="@+id/Version"
         android:title="@string/version_1_0_0"
-        android:orderInCategory="1"/>
+        android:orderInCategory="2"/>
+
 </menu>
