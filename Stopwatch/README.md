@@ -6,12 +6,14 @@ Dark themed, easy to use and accurate stopwatch with lap times.
 
 
 ## Download apk:
-<a href="https://drive.google.com/file/d/1yJ0NS_8tr-2ygcoPuVPfb1UsLB7k8W3C/view?usp=sharing"  download>
+<a href="https://drive.google.com/file/d/1bf1co6YO7TzqSLv5qp6Dkw6u336B4CoW/view?usp=sharing"  download>
   <img src="https://user-images.githubusercontent.com/73611313/173350418-faa518c8-046d-498f-9027-f9ca53fb9708.svg" alt="android"  width="50" height="50">
 </a>
 
 
  (click on the above icon to Download the apk)
+ 
+ Note :only for Android 10.0 (api 29) and above
  
  ## Screenshots
 
