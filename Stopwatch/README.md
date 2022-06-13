@@ -13,7 +13,7 @@ Dark themed, easy to use and accurate stopwatch with lap times.
 
  (click on the above icon to Download the apk)
  
- Note :only for Android 10.0 (api 29) and above
+ Note : only for Android 10.0 (api 29) and above
  
  ## Screenshots
 
