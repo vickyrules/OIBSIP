@@ -6,10 +6,11 @@ Quick, free unit converter (with 50+ units) that converts common units of measur
 
 ## Download apk:
 <a href="https://drive.google.com/file/d/1p0LfvrFUE-tdFihadJSePPTXbDbPxCvD/view?usp=sharing"  download>
-  <img src="https://github.com/vickyrules/userContents/blob/main/androidicon.png" alt="android"  width="50" height="50">
+  <img src="https://user-images.githubusercontent.com/73611313/173349689-6d9715b8-c257-4c5d-8f31-543ef0da5b2c.png" alt="android"  width="50" height="50">
 </a>
 
- (click on the android emoji to Download the apk)
+
+ (click on the icon to Download the apk)
  
  ## Screenshots
 
