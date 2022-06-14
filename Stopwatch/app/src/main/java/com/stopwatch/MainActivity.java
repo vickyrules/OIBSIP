@@ -197,8 +197,15 @@ public class MainActivity extends AppCompatActivity {
                     hrs.setValue(0);
                     min.setValue(0);
                     millisec.setValue(0);
+
+                    valhrsLst = 0;
+                    valminLst = 0;
+                    valsecLst = 0;
+                    valmillisecLSt = 0;
+
                     PlaceholderContent.ITEMS.clear();
                     beginTransition();
+                    stopped = true;
                     onStop();
                     return true;
                 }
@@ -339,18 +346,13 @@ public class MainActivity extends AppCompatActivity {
     // stop the stopwatch.
     @Override
     protected void onPause() {
-        super.onPause();
         wasRunning = running;
         running = false;
         stopped = false;
+        super.onPause();
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        stopped = true;
 
-    }
 
     // If the activity is resumed,
     // start the stopwatch
@@ -362,6 +364,7 @@ public class MainActivity extends AppCompatActivity {
             running = true;
         }
     }
+
 
 
     // Sets the NUmber of seconds on the timer.
@@ -427,7 +430,7 @@ public class MainActivity extends AppCompatActivity {
                 if (stopped) {
                     handler.removeCallbacks(this);
                 } else {
-                    handler.postDelayed(this, 10);
+                    handler.postDelayed(this, 1);
                 }
 
             }
@@ -468,8 +471,13 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.About:
 
+
+                if(!stopped){
+                    Toast.makeText(this, "Sorry! Timer is running", Toast.LENGTH_SHORT).show();
+                }
+                else{
                 Intent intent = new Intent(getApplicationContext(), AboutActivity.class);
-                startActivity(intent);
+                startActivity(intent);}
                 return true;
             case R.id.Version:
                 Toast.makeText(this, "Version 1.0.0", Toast.LENGTH_SHORT).show();
