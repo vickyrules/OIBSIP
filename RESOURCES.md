@@ -8,9 +8,10 @@
 <br>
 
 ## ⚙️ Technology Used
-<img src="https://github.com/devicons/devicon/blob/master/icons/java/java-original.svg" alt="Android" width="40" height="40"/> <img src="https://github.com/devicons/devicon/blob/master/icons/android/android-plain.svg" alt="Android" width="40" height="40"/>
+<img src="https://github.com/devicons/devicon/blob/master/icons/java/java-original.svg" alt="Android" width="40" height="40"/> <img src="https://github.com/devicons/devicon/blob/master/icons/android/android-plain.svg" alt="Android" width="40" height="40"/><img src="https://user-images.githubusercontent.com/73611313/173519973-a11c02c8-8730-41c6-b97a-d0fb35a0137c.svg" alt="Android" width="40"/><img src="https://user-images.githubusercontent.com/73611313/173520278-a989a590-0e70-45db-8aeb-cb04f8aaf923.svg" alt="Android" width="40"/>  <img src="https://user-images.githubusercontent.com/73611313/173520341-0fe0b8af-448a-4907-8326-7d76da7ffbc3.svg" alt="Android" width="40"/>
   
-  
+
+
 <h2 align="center">🛣 Android Studio Structure </h2>
 <br>
 
