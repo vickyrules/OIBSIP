@@ -14,7 +14,9 @@ A quiz applicaton
 
 ## Video
 
-https://user-images.githubusercontent.com/73611313/173352100-ffe16d23-4c95-46c4-ac71-c8fc143d6878.mp4
+https://user-images.githubusercontent.com/73611313/175773757-68fd90de-2bae-498a-a88d-c979e3be2900.mp4
+
+
 
 
 
