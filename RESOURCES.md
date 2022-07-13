@@ -24,7 +24,6 @@
 
 <br>
 
-
 <br>
 
 
@@ -80,3 +79,8 @@
  <br>
  
 --- 
+
+### Git Cheat-sheet
+![git](https://user-images.githubusercontent.com/73611313/178712927-0e3c3d16-318e-4c84-815f-0c64a3c0b2c0.png)
+
+ <a href = "https://github.com/vickyrules/userContents/blob/main/_Git%20cheat%20sheet%20dark.pdf">Download pdf</a>
